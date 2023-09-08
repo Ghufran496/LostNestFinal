@@ -1,0 +1,51 @@
+/* body {
+  background-color: #f1f1f1;
+} */
+
+.verticalcenter {
+  min-height: 100%;
+  min-height: 100vh;
+  background-image: url("/images/errorbg2.png");
+  background-size: cover; /* This property ensures the image covers the entire background */
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.linker {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.notfound {
+  padding: 20px;
+}
+.head1 {
+  font-size: 80px;
+}
+
+.head2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.para {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.underline {
+  text-decoration: underline;
+}

@@ -11,7 +11,7 @@ const Vision = () => {
         <Image
           className={classes.developerimg}
           src="/images/lost.png"
-          width={800}
+          width={1000}
           height={500}
           alt="loading"
         ></Image>

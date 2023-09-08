@@ -81,6 +81,7 @@
 .new h5 {
   font-size: 2.5rem;
   padding: 2rem 0 0 1rem;
+  overflow: visible;
 }
 .new {
   display: grid;
@@ -89,9 +90,9 @@
 .imagest {
   width: 100%;
 
-  height: 7rem;
-  border-radius: 20rem;
-  margin-top: 4px;
+  height: 8rem;
+
+  margin-top: 2px;
 }
 .mainnav {
   margin: 2rem;

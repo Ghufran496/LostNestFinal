@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { getSession } from "next-auth/client";
 import { useEffect, useState } from "react";
+import Loader from "../../components/UI/Loader";
 
 import AuthForm from "../../components/auth/auth-form";
 
@@ -19,7 +20,7 @@ function AuthPage() {
   }, [router]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   return <AuthForm />;
