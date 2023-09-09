@@ -42,7 +42,12 @@ function MainNavigation() {
           <ul className={classes.loginnav}>
             {session && (
               <li style={{ padding: "5px" }}>
-                <Link href="/dashboard">Dashboard</Link>
+                <Link href="/postitem">Post Item</Link>
+              </li>
+            )}
+            {session && (
+              <li style={{ padding: "5px" }}>
+                <Link href="/dashboard">Feed</Link>
               </li>
             )}
             {session && (
@@ -50,6 +55,7 @@ function MainNavigation() {
                 <Link href="/profile">Profile</Link>
               </li>
             )}
+
             {session && (
               <li>
                 <button onClick={logoutHandler} className={classes.btn}>
