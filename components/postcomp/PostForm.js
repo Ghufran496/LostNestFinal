@@ -47,13 +47,13 @@ function PostForm() {
   const dateInputRef = useRef();
 
   function converttobase64(e) {
-    console.log(e);
+    // console.log(e);
 
     var reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
 
     reader.onload = () => {
-      console.log(reader.result);
+      //console.log(reader.result);
       setIsImage(reader.result);
     };
 
@@ -124,9 +124,9 @@ function PostForm() {
             Category
           </option>
           <option value="Wallet">Wallet</option>
-          <option value="Card">ID Card / Student Card</option>
-          <option value="Wallet">Smart Phone / Laptop</option>
-          <option value="Found">Keys</option>
+          <option value="ID Card / Student Card">ID Card / Student Card</option>
+          <option value="Smart Phone / Laptop">Smart Phone / Laptop</option>
+          <option value="Keys">Keys</option>
           <option value="Others">Others</option>
         </select>
         <div style={{ display: "flex", flexDirection: "column" }}>
