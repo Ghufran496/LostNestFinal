@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PostGrid from "./PostGrid";
 
 import Loader from "../UI/Loader";
-function AllItems(props) {
+function AllItems() {
   const [isData, setIsData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -15,7 +15,7 @@ function AllItems(props) {
         setIsData(data);
       });
     setIsLoading(false);
-  }, []);
+  }, [setIsData]);
 
   return (
     <div>

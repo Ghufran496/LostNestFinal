@@ -1,8 +1,9 @@
 import React from "react";
 import { getSession } from "next-auth/client";
 import AllItems from "../../components/feed/AllItems";
+//import { getAllEvents } from "../../components/helpers/api-util";
 
-const dashboard = () => {
+const dashboard = (props) => {
   return (
     <>
       <div
@@ -23,6 +24,7 @@ const dashboard = () => {
           Posted Items
         </h1>
       </div>
+      {/* <button onClick={getAllEvents}>load</button> */}
 
       <AllItems />
     </>

@@ -20,7 +20,14 @@ function PostItem(props) {
 
   return (
     <li className={classes.item}>
-      <div className={classes.imgdiv}>
+      <div
+        className={classes.imgdiv}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <img
           src={ReducedImg}
           alt={Title}
@@ -34,7 +41,7 @@ function PostItem(props) {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            margin: "1rem",
+            marginTop: "1rem",
           }}
         >
           <h1
@@ -58,19 +65,27 @@ function PostItem(props) {
 
         <div
           style={{
-            padding: "0.5rem",
+            marginTop: "2rem",
+            marginBottom: "1rem",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
           }}
         >
-          <h2>Category: {Category}</h2>
+          <h2 style={{ textTransform: "capitalize" }}>Category: {Category}</h2>
+          <h2 style={{ textTransform: "capitalize" }}>Item Name: {Title}</h2>
         </div>
         <h3
           style={{
-            // border: "1px dotted black",
-            padding: "0.5rem",
             textTransform: "capitalize",
           }}
         >
-          <span style={{ fontWeight: "bolder", fontSize: "1.5rem" }}>
+          <span
+            style={{
+              fontWeight: "bolder",
+              fontSize: "1.5rem",
+            }}
+          >
             Description:&nbsp;
           </span>
           {Description}
