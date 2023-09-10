@@ -42,14 +42,15 @@ function MainNavigation() {
           <ul className={classes.loginnav}>
             {session && (
               <li style={{ padding: "5px" }}>
-                <Link href="/postitem">Post Item</Link>
+                <Link href="/dashboard">Feed</Link>
               </li>
             )}
             {session && (
               <li style={{ padding: "5px" }}>
-                <Link href="/dashboard">Feed</Link>
+                <Link href="/postitem">Post Item</Link>
               </li>
             )}
+
             {session && (
               <li style={{ padding: "5px" }}>
                 <Link href="/profile">Profile</Link>

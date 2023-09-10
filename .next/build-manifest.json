@@ -28,6 +28,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/dashboard.js"
+    ],
+    "/dashboard/[itemid]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/dashboard/[itemid].js"
     ]
   },
   "ampFirstPages": []
