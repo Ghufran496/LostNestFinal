@@ -28,7 +28,7 @@ function MainNavigation() {
         </Link>
 
         <nav className={classes.mainnav}>
-          <ul>
+          <ul className={classes.loginnav}>
             {!session && !loading && (
               <li>
                 <Link href="/auth">
@@ -38,21 +38,25 @@ function MainNavigation() {
                 </Link>
               </li>
             )}
-          </ul>
-          <ul className={classes.loginnav}>
+
             {session && (
-              <li style={{ padding: "5px" }}>
+              <li style={{ padding: "5px" }} className={classes.anch}>
                 <Link href="/dashboard">Feed</Link>
               </li>
             )}
             {session && (
-              <li style={{ padding: "5px" }}>
-                <Link href="/postitem">Post Item</Link>
+              <li style={{ padding: "5px" }} className={classes.anch}>
+                <Link href="/postlostitem">Lost Item?</Link>
               </li>
             )}
 
             {session && (
-              <li style={{ padding: "5px" }}>
+              <li style={{ padding: "5px" }} className={classes.anch}>
+                <Link href="/postfounditem">Found Item?</Link>
+              </li>
+            )}
+            {session && (
+              <li style={{ padding: "5px" }} className={classes.anch}>
                 <Link href="/profile">Profile</Link>
               </li>
             )}

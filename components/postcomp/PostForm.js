@@ -105,15 +105,13 @@ function PostForm() {
   }
   return (
     <>
-      <h1 style={{ fontSize: "5rem" }}>Post new Item as Lost or Found</h1>
+      <h1 style={{ fontSize: "5rem" }}>Post new Item as Lost Item</h1>
       <h2>Please Provide genunine Informations only.</h2>
       <form className={classes.form} onSubmit={postSubmitHandler}>
         <select name="item" className={classes.customselect} ref={typeInputRef}>
-          <option value="" disabled selected>
-            Type
+          <option value="Lost" selected>
+            Lost
           </option>
-          <option value="Lost">Lost</option>
-          <option value="Found">Found</option>
         </select>
         <select
           name="category"
