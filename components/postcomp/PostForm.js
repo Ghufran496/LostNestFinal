@@ -109,9 +109,7 @@ function PostForm() {
       <h2>Please Provide genunine Informations only.</h2>
       <form className={classes.form} onSubmit={postSubmitHandler}>
         <select name="item" className={classes.customselect} ref={typeInputRef}>
-          <option value="Lost" selected>
-            Lost
-          </option>
+          <option value="Lost">Lost</option>
         </select>
         <select
           name="category"

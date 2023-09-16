@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import classes from "./loader.module.css";
+import classes from "./Loader.module.css";
 
 function Loader() {
   useEffect(() => {

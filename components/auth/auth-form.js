@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { signIn } from "next-auth/client";
 import { useRouter } from "next/router";
-import Loader from "../UI/Loader";
+import Loading from "../UI/Loading";
 import Button from "../UI/Button";
 import classes from "./auth-form.module.css";
 import Error from "../UI/Error";
@@ -102,7 +102,7 @@ function AuthForm() {
     }
   }
   if (isLoading) {
-    return <Loader />;
+    return <Loading />;
   }
 
   if (isError) {
