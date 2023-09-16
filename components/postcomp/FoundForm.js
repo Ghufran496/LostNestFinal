@@ -109,9 +109,7 @@ function FoundForm() {
       <h2>Please Provide genunine Informations only.</h2>
       <form className={classes.form} onSubmit={postSubmitHandler}>
         <select name="item" className={classes.customselect} ref={typeInputRef}>
-          <option value="Found" selected>
-            Found
-          </option>
+          <option value="Found">Found</option>
         </select>
         <select
           name="category"

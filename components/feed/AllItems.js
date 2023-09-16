@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect, useState } from "react";
 import PostGrid from "./PostGrid";
 
-import Loader from "../UI/Loader";
+// import Loader from "../UI/Loader";
+import Loading from "../UI/Loading";
 function AllItems() {
   const [isData, setIsData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +21,7 @@ function AllItems() {
   return (
     <div>
       <PostGrid data={isData} />
-      {isLoading && <Loader />}
+      {isLoading && <Loading />}
     </div>
   );
 }

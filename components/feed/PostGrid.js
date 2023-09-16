@@ -1,11 +1,12 @@
 import React from "react";
 import PostItem from "./PostItem";
-import Loader from "../UI/Loader";
+// import Loader from "../UI/Loader";
+import Loading from "../UI/Loading";
 
 function PostGrid(props) {
   const { data } = props;
   if (!Array.isArray(data)) {
-    return <Loader />;
+    return <Loading />;
   }
   return (
     <ul

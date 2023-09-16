@@ -2,10 +2,20 @@ import React from "react";
 import { getSession } from "next-auth/client";
 import AllItems from "../../components/feed/AllItems";
 //import { getAllEvents } from "../../components/helpers/api-util";
+import { Fragment } from "react";
+import Head from "next/head";
 
 const dashboard = (props) => {
   return (
-    <>
+    <Fragment>
+      <Head>
+        <title>Dashboard</title>
+        <meta
+          name="description"
+          content="All Posted items who are either Lost or Found"
+        />
+        <link rel="icon" href="/images/logos.png" />
+      </Head>
       <div
         style={{
           display: "flex",
@@ -27,7 +37,7 @@ const dashboard = (props) => {
       {/* <button onClick={getAllEvents}>load</button> */}
 
       <AllItems />
-    </>
+    </Fragment>
   );
 };
 export async function getServerSideProps(context) {

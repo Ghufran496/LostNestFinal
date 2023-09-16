@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./PostItem.module.css";
 import Button from "../UI/Button";
 import Link from "next/link";
 
 function PostItem(props) {
-  // console.log(props.data);
   const {
     _id,
     Type,
