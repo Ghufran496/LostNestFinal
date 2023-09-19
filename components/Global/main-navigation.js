@@ -56,7 +56,13 @@ function MainNavigation() {
               </li>
             )}
             {session && (
-              <li style={{ padding: "5px" }} className={classes.anch}>
+              <li
+                style={{ padding: "5px" }}
+                className={classes.anch}
+                // onClick={() => {
+                //   window.alert("Please wait patiently.");
+                // }}
+              >
                 <Link href="/profile">Profile</Link>
               </li>
             )}

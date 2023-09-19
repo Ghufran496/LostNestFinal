@@ -9,9 +9,10 @@ async function handler(req, res) {
 
   const data = req.body;
 
-  const { email, password } = data;
+  const { email, password, enteredName } = data;
 
   if (
+    !enteredName ||
     !email ||
     !email.includes("@") ||
     !password ||
@@ -39,6 +40,7 @@ async function handler(req, res) {
   const hashedPassword = await hashPassword(password);
 
   const result = await db.collection("users").insertOne({
+    name: enteredName,
     email: email,
     password: hashedPassword,
   });
