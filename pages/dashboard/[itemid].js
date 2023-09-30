@@ -97,6 +97,7 @@ function ItemDetailPage(props) {
         Type={event.Type}
         Category={event.Category}
       />
+      
       <EventContent>
         <p>{event.Description}</p>
       </EventContent>

@@ -18,7 +18,7 @@ function UserProfile() {
 
   return (
     <section className={classes.profile}>
-      <h1>Your User Profile</h1>
+      <h1 style={{ textTransform: "uppercase" }}>Enter Details</h1>
       <ProfileForm onChangePassword={changePasswordHandler} />
     </section>
   );
