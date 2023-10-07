@@ -1,10 +1,6 @@
 import React from "react";
 import Image from "next/image";
-// import image from "@/public/images/lost-2.svg";
-// import login from "@/public/images/login-1.svg";
-// import listItem from "@/public/images/list-item.svg";
-// import notification from "@/public/images/notification.svg";
-//import logo from "../images/logo.png";
+
 import classes from "./HomeMain.module.css";
 import Link from "next/link";
 import Button from "../UI/Button";

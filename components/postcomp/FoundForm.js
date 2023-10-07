@@ -105,7 +105,7 @@ function FoundForm() {
   }
   return (
     <>
-      <h1 style={{ fontSize: "5rem" }}>Post new Item as Found Item</h1>
+      <h1 className={classes.head1}>Post new Item as Found Item</h1>
       <h2>Please Provide genunine Informations only.</h2>
       <form className={classes.form} onSubmit={postSubmitHandler}>
         <select name="item" className={classes.customselect} ref={typeInputRef}>
@@ -197,8 +197,6 @@ function FoundForm() {
         />
         <Button content="Post"></Button>
       </form>
-
-      <img width={100} height={100} src={isImage}></img>
     </>
   );
 }
