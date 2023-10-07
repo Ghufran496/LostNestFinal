@@ -55,6 +55,59 @@
   color: #18e0d0;
 }
 
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .logistics {
+    display: flex;
+    padding: 2rem;
+    margin: -5rem auto;
+    gap: 2rem;
+  }
+  .list {
+    align-items: flex-start;
+  }
+  .image {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .image img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .logistics {
+    padding: 2rem;
+    margin: -5rem auto;
+    gap: 2rem;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .image {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .image img {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .list {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+}
+
+@media screen and (min-width: 1201px) {
+}
 @media (min-width: 768px) {
   .logistics {
     padding: 2rem;
