@@ -16,5 +16,5 @@ function HomePage() {
     </Fragment>
   );
 }
-
+// "mdb-react-ui-kit": "^6.3.0",
 export default HomePage;
