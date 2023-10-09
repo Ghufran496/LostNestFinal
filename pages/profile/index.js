@@ -49,6 +49,27 @@ export async function getServerSideProps(context) {
   };
 }
 
+// export async function getStaticProps(context) {
+//   console.log("regenerating...");
+//   const session = await getSession({ req: context.req });
+
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/auth",
+//         permanent: false,
+//       },
+//     };
+//   }
+
+//   return {
+//     props: {
+//       session,
+//     },
+//     revalidate: 60,
+//   };
+// }
+
 export default ProfilePage;
 
 /*

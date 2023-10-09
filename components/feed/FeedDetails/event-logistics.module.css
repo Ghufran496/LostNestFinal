@@ -100,14 +100,6 @@
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-}
-
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
-}
-
-@media screen and (min-width: 1201px) {
-}
 @media (min-width: 768px) {
   .logistics {
     padding: 2rem;
