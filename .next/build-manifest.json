@@ -14,6 +14,11 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
+    "/": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -28,6 +33,21 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/dashboard.js"
+    ],
+    "/postfounditem": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/postfounditem.js"
+    ],
+    "/postlostitem": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/postlostitem.js"
+    ],
+    "/profile": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/profile.js"
     ]
   },
   "ampFirstPages": []
