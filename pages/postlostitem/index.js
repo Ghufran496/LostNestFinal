@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
-import PostForm from "../../components/postcomp/PostForm";
 import classes from "./PostItem.module.css";
 import { getSession } from "next-auth/client";
 import Head from "next/head";
+import PostNewItem from "../../components/postcomp/PostNewItem";
+
 function PostItem() {
   return (
     <Fragment>
@@ -15,7 +16,7 @@ function PostItem() {
         <link rel="icon" href="/images/logos.png" />
       </Head>
       <div className={classes.center}>
-        <PostForm />
+        <PostNewItem />
       </div>
     </Fragment>
   );

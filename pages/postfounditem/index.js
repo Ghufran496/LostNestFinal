@@ -1,8 +1,10 @@
 import React from "react";
-import FoundForm from "../../components/postcomp/FoundForm";
+
 import classes from "./PostItem.module.css";
 import { getSession } from "next-auth/client";
 import { Fragment } from "react";
+import FoundNewItem from "../../components/postcomp/FoundNewItem";
+
 import Head from "next/head";
 function PostLostItem() {
   return (
@@ -16,7 +18,7 @@ function PostLostItem() {
         <link rel="icon" href="/images/logos.png" />
       </Head>
       <div className={classes.center}>
-        <FoundForm />
+        <FoundNewItem />
       </div>
     </Fragment>
   );
