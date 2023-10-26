@@ -7,7 +7,7 @@ function PersonalProfile(props) {
   const profileid = `/profile/${props.id}`;
   return (
     <Fragment>
-      <section style={{ paddingTop: "20rem" }}>
+      <section style={{ paddingTop: "22rem" }}>
         <aside className={classes.profilecard}>
           <header>
             <div>
@@ -44,7 +44,7 @@ function PersonalProfile(props) {
                 </a>
               </Link>
             </div>
-            <p
+            {/* <p
               style={{
                 marginTop: "0.5rem",
                 textDecoration: "underline",
@@ -52,7 +52,7 @@ function PersonalProfile(props) {
               }}
             >
               "You are enough just as you are." Meghan Markle
-            </p>
+            </p> */}
           </div>
         </aside>
       </section>

@@ -14,6 +14,11 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
+    "/": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
@@ -23,6 +28,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/auth": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/auth.js"
     ],
     "/dashboard": [
       "static/chunks/main.js",
@@ -34,30 +44,15 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/dashboard/[itemid].js"
     ],
-    "/next/dist/pages/_error": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/next/dist/pages/_error.js"
-    ],
     "/postfounditem": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/postfounditem.js"
     ],
-    "/postlostitem": [
+    "/stats": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/postlostitem.js"
-    ],
-    "/profile": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/profile.js"
-    ],
-    "/profile/[profileid]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/profile/[profileid].js"
+      "static/chunks/pages/stats.js"
     ]
   },
   "ampFirstPages": []

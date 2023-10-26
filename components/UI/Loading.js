@@ -7,6 +7,7 @@ function Loading() {
       <div
         className={`${classes.justifycontentcenter} ${classes.jimuprimaryloading}`}
       ></div>
+      <div className={classes.text}>Please be patient...</div>
     </div>
   );
 }

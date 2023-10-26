@@ -4,6 +4,7 @@ import AllItems from "../../components/feed/AllItems";
 //import { getAllEvents } from "../../components/helpers/api-util";
 import { Fragment } from "react";
 import Head from "next/head";
+//http://localhost:3000/dashboard/64fdbd973e38583470fb6b77
 
 const dashboard = (props) => {
   return (
