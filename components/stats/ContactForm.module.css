@@ -1,0 +1,50 @@
+.totalcontactform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 11rem 8rem;
+}
+
+.contacttitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contacttitle > .sectionheading {
+  font-size: 3rem;
+  color: #311465;
+  text-transform: uppercase;
+  border-bottom: 3px solid #2e186a;
+  margin-bottom: 1.7rem;
+}
+
+.contacttitle > p {
+  font-size: 1.5rem;
+
+  text-align: justify;
+  text-transform: capitalize;
+}
+
+.contactform > form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactform > form > div > label {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.contactform > form > div > input {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.contactform > form > div > textarea {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}

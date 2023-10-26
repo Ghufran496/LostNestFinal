@@ -29,6 +29,11 @@ function MainNavigation() {
 
         <nav className={classes.mainnav}>
           <ul className={classes.loginnav}>
+            {!session && (
+              <li style={{ padding: "5px" }} className={classes.anch}>
+                <Link href="/stats">Stats</Link>
+              </li>
+            )}
             {!session && !loading && (
               <li>
                 <Link href="/auth">

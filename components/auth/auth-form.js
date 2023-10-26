@@ -5,6 +5,8 @@ import Loading from "../UI/Loading";
 import Button from "../UI/Button";
 import classes from "./auth-form.module.css";
 import Error from "../UI/Error";
+import { Fragment } from "react";
+import Footer from "../Global/Footer";
 
 async function createUser(email, password, enteredName) {
   const response = await fetch("/api/auth/signup", {
@@ -116,75 +118,81 @@ function AuthForm() {
   }
 
   return (
-    <div className={classes.col1}>
-      <div className={classes.formbox}>
-        <div className={classes.form}>
-          {!toggleForms && (
-            <form className={classes.loginform} onSubmit={submitHandler}>
-              <center>
-                <h1 className={classes.mainheading}>Login Form</h1>
-              </center>
-              <input
-                type="email"
-                placeholder="email-id"
-                ref={loginEmailInputRef}
-              />
-              <input
-                type="password"
-                placeholder="password"
-                ref={loginPasswordInputRef}
-              />
+    <Fragment>
+      <div className={classes.col1}>
+        <div className={classes.formbox}>
+          <div className={classes.form}>
+            {!toggleForms && (
+              <form className={classes.loginform} onSubmit={submitHandler}>
+                <center>
+                  <h1 className={classes.mainheading}>Login Form</h1>
+                </center>
+                <input
+                  type="email"
+                  placeholder="email-id"
+                  ref={loginEmailInputRef}
+                />
+                <input
+                  type="password"
+                  placeholder="password"
+                  ref={loginPasswordInputRef}
+                />
 
-              <Button content="LOGIN" onClick={switchAuthModeHandler}></Button>
+                <Button
+                  content="LOGIN"
+                  onClick={switchAuthModeHandler}
+                ></Button>
 
-              <p className={classes.message}>
-                Not Registered&nbsp;?&nbsp;
-                <a onClick={toggleForm} className={classes.link}>
-                  Register
-                </a>
-              </p>
-            </form>
-          )}
-          {toggleForms && (
-            <form
-              className={classes.registerform}
-              onSubmit={submitHandlerRegister}
-            >
-              <center>
-                <h1 className={classes.mainheading}>Register Form</h1>
-              </center>
-              <input
-                type="text"
-                placeholder="user name"
-                ref={registerNameInputRef}
-              />
-              <input
-                type="email"
-                placeholder="email-id"
-                ref={registerEmailInputRef}
-              />
-              <input
-                type="password"
-                placeholder="password"
-                ref={registerPasswordInputRef}
-              />
+                <p className={classes.message}>
+                  Not Registered&nbsp;?&nbsp;
+                  <a onClick={toggleForm} className={classes.link}>
+                    Register
+                  </a>
+                </p>
+              </form>
+            )}
+            {toggleForms && (
+              <form
+                className={classes.registerform}
+                onSubmit={submitHandlerRegister}
+              >
+                <center>
+                  <h1 className={classes.mainheading}>Register Form</h1>
+                </center>
+                <input
+                  type="text"
+                  placeholder="user name"
+                  ref={registerNameInputRef}
+                />
+                <input
+                  type="email"
+                  placeholder="email-id"
+                  ref={registerEmailInputRef}
+                />
+                <input
+                  type="password"
+                  placeholder="password"
+                  ref={registerPasswordInputRef}
+                />
 
-              <Button
-                content="REGISTER"
-                onClick={switchAuthModeHandler}
-              ></Button>
+                <Button
+                  content="REGISTER"
+                  onClick={switchAuthModeHandler}
+                ></Button>
 
-              <p className={classes.message}>
-                Already Registered&nbsp;?&nbsp;
-                <a onClick={toggleForm} className={classes.link}>
-                  Login
-                </a>
-              </p>
-            </form>
-          )}
+                <p className={classes.message}>
+                  Already Registered&nbsp;?&nbsp;
+                  <a onClick={toggleForm} className={classes.link}>
+                    Login
+                  </a>
+                </p>
+              </form>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </Fragment>
   );
 }
 

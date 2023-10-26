@@ -1,6 +1,7 @@
 import HomeMain from "../components/Homecomp/HomeMain";
 import { Fragment } from "react";
 import Head from "next/head";
+import Footer from "../components/Global/Footer";
 function HomePage() {
   return (
     <Fragment>
@@ -13,6 +14,7 @@ function HomePage() {
         <link rel="icon" href="/images/logos.png" />
       </Head>
       <HomeMain />
+      <Footer></Footer>
     </Fragment>
   );
 }
