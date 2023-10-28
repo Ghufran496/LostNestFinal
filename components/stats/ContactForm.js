@@ -4,30 +4,37 @@ import Button from "../UI/Button";
 import { useRef, useState } from "react";
 import Loading from "../UI/Loading";
 import Footer from "../Global/Footer";
-
-async function sendMessage(email, message, enteredName) {
-  const response = await fetch("/api/contactForm/message", {
-    method: "POST",
-    body: JSON.stringify({ email, message, enteredName }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  const data = await response.json();
-
-  if (!response.ok) {
-    throw new Error(data.message || "Something went wrong!");
-  }
-
-  return data;
-}
+import ErrorComp from "../UI/ErrorComp";
 
 function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [isErrorData, setIsErrorData] = useState(
+    "Sorry but the page you are looking for does not exist."
+  );
   const contactEmailInputRef = useRef();
   const contactMessageInputRef = useRef();
   const contactNameInputRef = useRef();
+
+  async function sendMessage(email, message, enteredName) {
+    const response = await fetch("/api/contactForm/message", {
+      method: "POST",
+      body: JSON.stringify({ email, message, enteredName }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setIsErrorData(data.message);
+      setIsLoading(false);
+      setIsError(true);
+    }
+
+    return data;
+  }
 
   async function submitHandler(event) {
     event.preventDefault();
@@ -37,25 +44,16 @@ function ContactForm() {
     const enteredMessage = contactMessageInputRef.current.value;
     const enteredName = contactNameInputRef.current.value;
 
-    try {
-      const result = await sendMessage(
-        enteredEmail,
-        enteredMessage,
-        enteredName
-      );
-
-      setIsLoading(false);
-      // console.log(result);
-      //console.log(result);
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-    }
+    const result = await sendMessage(enteredEmail, enteredMessage, enteredName);
     setIsLoading(false);
   }
 
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (isError) {
+    return <ErrorComp errorData={isErrorData} />;
   }
 
   return (

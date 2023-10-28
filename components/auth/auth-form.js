@@ -7,24 +7,26 @@ import classes from "./auth-form.module.css";
 import Error from "../UI/Error";
 import { Fragment } from "react";
 import Footer from "../Global/Footer";
+import ErrorComp from "../UI/ErrorComp";
 
-async function createUser(email, password, enteredName) {
-  const response = await fetch("/api/auth/signup", {
-    method: "POST",
-    body: JSON.stringify({ email, password, enteredName }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+// async function createUser(email, password, enteredName) {
+//   const response = await fetch("/api/auth/signup", {
+//     method: "POST",
+//     body: JSON.stringify({ email, password, enteredName }),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
 
-  const data = await response.json();
+//   const data = await response.json();
 
-  if (!response.ok) {
-    throw new Error(data.message || "Something went wrong!");
-  }
+//   // console.log(data.message);
+//   if (!response.ok) {
+//     throw new Error(data.message || "Something went wrong!");
+//   }
 
-  return data;
-}
+//   return data;
+// }
 
 function AuthForm() {
   const [toggleForms, setToggleForms] = useState(false);
@@ -33,6 +35,26 @@ function AuthForm() {
   const [isErrorData, setIsErrorData] = useState(
     "Sorry but the page you are looking for does not exist."
   );
+
+  async function createUser(email, password, enteredName) {
+    const response = await fetch("/api/auth/signup", {
+      method: "POST",
+      body: JSON.stringify({ email, password, enteredName }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setIsErrorData(data.message);
+      setIsLoading(false);
+      setIsError(true);
+    }
+
+    return data;
+  }
 
   const toggleForm = () => {
     setToggleForms((prev) => !prev);
@@ -68,18 +90,13 @@ function AuthForm() {
       });
 
       if (!result.error) {
-        // set some auth state
         router.replace("/dashboard");
-        // console.log(result + "Login success");
-        console.log(result);
         setIsLoading(false);
       }
       if (result.error) {
         setIsLoading(false);
         setIsErrorData(result.error);
         setIsError(true);
-        //console.log(result.error);
-        // errorContent(result.error);
       }
     }
   }
@@ -93,28 +110,15 @@ function AuthForm() {
     const enteredName = registerNameInputRef.current.value;
     // optional: Add validation
 
-    try {
-      const result = await createUser(
-        enteredEmail,
-        enteredPassword,
-        enteredName
-      );
-      setIsLoading(false);
-      // console.log(result);
-      //console.log(result);
-    } catch (error) {
-      console.log(error);
-      setIsLoading(false);
-      setIsError(true);
-      setIsErrorData("account already exists");
-    }
+    const result = await createUser(enteredEmail, enteredPassword, enteredName);
+    setIsLoading(false);
   }
   if (isLoading) {
     return <Loading />;
   }
 
   if (isError) {
-    return <Error errorData={isErrorData} />;
+    return <ErrorComp errorData={isErrorData} />;
   }
 
   return (

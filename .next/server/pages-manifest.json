@@ -5,10 +5,5 @@
   "/stats": "pages/stats.js",
   "/auth": "pages/auth.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/": "pages/index.js",
-  "/api/contactForm/message": "pages/api/contactForm/message.js",
-  "/api/post/postitem": "pages/api/post/postitem.js",
-  "/dashboard": "pages/dashboard.js",
-  "/dashboard/[itemid]": "pages/dashboard/[itemid].js",
-  "/postfounditem": "pages/postfounditem.js"
+  "/": "pages/index.js"
 }
