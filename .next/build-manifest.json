@@ -34,21 +34,6 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/auth.js"
     ],
-    "/dashboard": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/dashboard.js"
-    ],
-    "/dashboard/[itemid]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/dashboard/[itemid].js"
-    ],
-    "/postfounditem": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/postfounditem.js"
-    ],
     "/stats": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",

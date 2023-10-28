@@ -9,9 +9,22 @@ async function handler(req, res) {
 
   const { email, message, enteredName } = data;
 
-  if (!enteredName || !email || !email.includes("@") || !message) {
+  if (!enteredName) {
     res.status(422).json({
-      message: "Invalid input - please enter correct details",
+      message: "Please Enter your Name",
+    });
+    return;
+  }
+
+  if (!message) {
+    res.status(422).json({
+      message: "Message not Entered",
+    });
+    return;
+  }
+  if (!email.includes("@") || !email) {
+    res.status(422).json({
+      message: "Invalid Email address",
     });
     return;
   }
