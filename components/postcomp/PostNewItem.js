@@ -5,42 +5,49 @@ import Button from "../UI/Button";
 
 import { useRef, useState } from "react";
 import Loading from "../UI/Loading";
-async function sendPostData(
-  Type,
-  Category,
-  Title,
-  Description,
-  Question,
-  Date,
-  imageInbase64
-) {
-  const response = await fetch("/api/post/postitem", {
-    method: "POST",
-    body: JSON.stringify({
-      Type,
-      Category,
-      Title,
-      Description,
-      Question,
-      Date,
-      ReducedImg: imageInbase64,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+import ErrorComp from "../UI/ErrorComp";
 
-  const data = await response.json();
+// async function sendPostData(
+//   Type,
+//   Category,
+//   Title,
+//   Description,
+//   Question,
+//   Date,
+//   imageInbase64
+// ) {
+//   const response = await fetch("/api/post/postitem", {
+//     method: "POST",
+//     body: JSON.stringify({
+//       Type,
+//       Category,
+//       Title,
+//       Description,
+//       Question,
+//       Date,
+//       ReducedImg: imageInbase64,
+//     }),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   });
 
-  if (!response.ok) {
-    throw new Error(data.message || "Something went wrong!");
-  }
+//   const data = await response.json();
 
-  return data;
-}
+//   if (!response.ok) {
+//     throw new Error(data.message || "Something went wrong!");
+//   }
+
+//   return data;
+// }
 function PostNewItem() {
   const [isLoading, setIsLoading] = useState(false);
   const [isImage, setIsImage] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [isErrorData, setIsErrorData] = useState(
+    "Sorry but the page you are looking for does not exist."
+  );
+
   const typeInputRef = useRef();
   const categoryInputRef = useRef();
   const titleInputRef = useRef();
@@ -48,6 +55,41 @@ function PostNewItem() {
   const questionInputRef = useRef();
   const dateInputRef = useRef();
 
+  async function sendPostData(
+    Type,
+    Category,
+    Title,
+    Description,
+    Question,
+    Date,
+    imageInbase64
+  ) {
+    const response = await fetch("/api/post/postitem", {
+      method: "POST",
+      body: JSON.stringify({
+        Type,
+        Category,
+        Title,
+        Description,
+        Question,
+        Date,
+        ReducedImg: imageInbase64,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setIsErrorData(data.message);
+      setIsLoading(false);
+      setIsError(true);
+    }
+
+    return data;
+  }
   function converttobase64(e) {
     // console.log(e);
 
@@ -83,27 +125,26 @@ function PostNewItem() {
       }
     );
 
-    try {
-      const result = await sendPostData(
-        enteredType,
-        enteredCategory,
-        enteredTitle,
-        enteredDescription,
-        enteredQuestion,
-        humanReadableDate,
-        isImage
-      );
+    const result = await sendPostData(
+      enteredType,
+      enteredCategory,
+      enteredTitle,
+      enteredDescription,
+      enteredQuestion,
+      humanReadableDate,
+      isImage
+    );
 
-      console.log(result);
-      event.target.reset(); // This resets the form
-      setIsLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
+    event.target.reset(); // This resets the form
+    setIsLoading(false);
   };
 
   if (isLoading) {
     return <Loading />;
+  }
+
+  if (isError) {
+    return <ErrorComp errorData={isErrorData} />;
   }
 
   return (
