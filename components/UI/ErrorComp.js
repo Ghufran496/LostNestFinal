@@ -5,8 +5,8 @@ import classes from "./ErrorComp.module.css";
 import Link from "next/link";
 import Button from "./Button";
 function ErrorComp(props) {
-  const link = props.moveto;
-  console.log(link);
+  //const link = props.moveto;
+  //console.log(link);
 
   return (
     <Fragment>

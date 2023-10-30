@@ -7,7 +7,7 @@
   top: 50%;
   z-index: 2;
   overflow: hidden;
-  opacity: 1;
+  opacity: -1;
   margin-top: 70px;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -52%);
@@ -45,7 +45,7 @@
 
 .profilecard header h1 {
   color: #311465;
-  font-size: 10px;
+  font-size: 15px;
 }
 .profilecard header h2 {
   color: #311465;
