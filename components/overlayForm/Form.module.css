@@ -1,0 +1,76 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* color: #18e0d0; */
+}
+.labels {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.span1 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.inputfield {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border: 1px solid #311465;
+  outline: none;
+  color: #311465;
+  padding: 2px 8px 2px 8px;
+  box-shadow: inset 1px 1px 4px #311465;
+  -moz-box-shadow: inset 1px 1px 4px #311465;
+  -webkit-box-shadow: inset 1px 1px 4px #311465;
+  background: #efeff0;
+  width: 60%;
+}
+
+/* <!-- HTML !-->
+<button class="button-89" role="button">Button 89</button> */
+
+/* CSS */
+.button89 {
+  --b: 3px; /* border thickness */
+  --s: 0.45em; /* size of the corner */
+  --color: white;
+  margin: 1.5rem;
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button89:hover,
+.button89:focus-visible {
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: 0.05em;
+}
+
+.button89:active {
+  background: var(--color);
+  color: #fff;
+}

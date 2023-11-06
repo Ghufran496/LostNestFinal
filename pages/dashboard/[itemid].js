@@ -4,6 +4,8 @@ import { Fragment } from "react";
 import EventSummary from "../../components/feed/FeedDetails/event-summary";
 import EventLogistics from "../../components/feed/FeedDetails/event-logistics";
 import EventContent from "../../components/feed/FeedDetails/event-content";
+import QuestionForm from "../../components/overlayForm/QuestionForm";
+import classes from "./itemid.module.css";
 
 const { ObjectId } = require("mongodb");
 import Loading from "../../components/UI/Loading";
@@ -11,6 +13,8 @@ import { connectToDatabase } from "../../lib/db";
 
 function ItemDetailPage(props) {
   const [isLoading, setIsLoading] = useState(false);
+  const [showQForm, setIsShowQForm] = useState(false);
+
   const { extractedObject } = props;
 
   if (!extractedObject) {
@@ -28,6 +32,15 @@ function ItemDetailPage(props) {
     return <Loading />;
   }
   const event = extractedObject;
+  // const changeModeHandler = () => {
+  //   setIsShowQForm((prevState) => !prevState);
+  // };
+  const showModeHandler = () => {
+    setIsShowQForm(true);
+  };
+  const hideModeHandler = () => {
+    setIsShowQForm(false);
+  };
 
   return (
     <Fragment>
@@ -36,6 +49,7 @@ function ItemDetailPage(props) {
         <meta name="description" content={event.Description} />
       </Head>
       <EventSummary Title={event.Title} />
+
       <EventLogistics
         Date={event.Date}
         ReducedImg={event.ReducedImg}
@@ -47,6 +61,17 @@ function ItemDetailPage(props) {
       <EventContent>
         <p>{event.Description}</p>
       </EventContent>
+      <div className={classes.btndiv}>
+        <button
+          onClick={showModeHandler}
+          className={classes.button52}
+          role="button"
+        >
+          Claim this {event.Title}
+        </button>
+      </div>
+
+      {showQForm && <QuestionForm onclose={hideModeHandler} data={event} />}
     </Fragment>
   );
 }
