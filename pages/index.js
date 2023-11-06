@@ -2,6 +2,7 @@ import HomeMain from "../components/Homecomp/HomeMain";
 import { Fragment } from "react";
 import Head from "next/head";
 import Footer from "../components/Global/Footer";
+
 function HomePage() {
   return (
     <Fragment>
