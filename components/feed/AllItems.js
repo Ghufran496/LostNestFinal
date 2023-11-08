@@ -20,6 +20,7 @@ function AllItems() {
     fetch("/api/post/postitem")
       .then((response) => response.json())
       .then((data) => {
+        //console.log(data);
         if (isMounted) {
           setIsData(data);
           if (data.message) {
@@ -43,28 +44,6 @@ function AllItems() {
       isMounted = false; // Set flag to false when component is unmounted
     };
   }, [setIsData, setIsError, setIsErrorData]);
-
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   // fetch("/api/post/postitem")
-  //   //   .then((response) => response.json())
-  //   //   .then((data) => {
-  //   //     // console.log(data);
-  //   //     setIsData(data);
-  //   //   });
-
-  //   fetch("/api/post/postitem")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       //console.log(data.message);
-  //       setIsData(data);
-  //       if (data.message) {
-  //         setIsErrorData(data.message);
-  //         setIsError(true);
-  //       }
-  //     });
-  //   setIsLoading(false);
-  // }, [setIsData, setIsError, setIsErrorData]);
 
   if (isError) {
     return <ErrorComp errorData={isErrorData} />;

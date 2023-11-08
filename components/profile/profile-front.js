@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Loading from "../UI/Loading";
 import PersonalProfile from "./profilecomp/userprofile-comp";
 import ErrorComp from "../UI/ErrorComp";
+//import ProfileNav from "./profile-nav";
 
 function ProfileFront() {
   const [isData, setIsData] = useState("");
@@ -39,6 +40,7 @@ function ProfileFront() {
   }
   return (
     <Fragment>
+      {/* <ProfileNav /> */}
       <PersonalProfile
         name={isData.name}
         id={isData._id}
@@ -49,17 +51,3 @@ function ProfileFront() {
 }
 
 export default ProfileFront;
-/*
-
- const [isData, setIsData] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("/api/post/postitem")
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data);
-        setIsData(data);
-      });
-    setIsLoading(false);
-  }, [setIsData]);*/

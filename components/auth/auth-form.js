@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Loading from "../UI/Loading";
 import Button from "../UI/Button";
 import classes from "./auth-form.module.css";
-import Error from "../UI/Error";
+//import Error from "../UI/Error";
 import { Fragment } from "react";
 import Footer from "../Global/Footer";
 import ErrorComp from "../UI/ErrorComp";
