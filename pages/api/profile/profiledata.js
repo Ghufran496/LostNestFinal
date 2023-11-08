@@ -9,6 +9,8 @@ async function handler(req, res) {
       res.status(401).json({ message: "Not authenticated!" });
       return;
     }
+
+    //console.log(session);
     const userEmail = session.user.email;
     const client = await connectToDatabase();
     const usersCollection = client.db().collection("users");

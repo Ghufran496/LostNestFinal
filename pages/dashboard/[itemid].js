@@ -32,9 +32,7 @@ function ItemDetailPage(props) {
     return <Loading />;
   }
   const event = extractedObject;
-  // const changeModeHandler = () => {
-  //   setIsShowQForm((prevState) => !prevState);
-  // };
+
   const showModeHandler = () => {
     setIsShowQForm(true);
   };

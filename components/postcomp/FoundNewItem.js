@@ -160,12 +160,13 @@ function FoundNewItem() {
               <option value="Found">Found</option>
             </select>
             <select
+              defaultValue="Category"
               name="category"
               className={classes.inputfield}
               ref={categoryInputRef}
               required
             >
-              <option value="" disabled selected>
+              <option value="Category" disabled>
                 Category
               </option>
               <option value="Wallet">Wallet</option>
@@ -178,7 +179,7 @@ function FoundNewItem() {
             </select>
           </div>
 
-          <label for="field3">
+          <label htmlFor="field3">
             <span>
               Item Name <span className={classes.required}>*</span>
             </span>
@@ -191,7 +192,7 @@ function FoundNewItem() {
               required
             ></input>
           </label>
-          <label for="field4">
+          <label htmlFor="field4">
             <span>
               Enter question based on an item.
               <span className={classes.required}>*</span>
@@ -222,7 +223,7 @@ function FoundNewItem() {
         </fieldset>
         <fieldset>
           <legend>Details</legend>
-          <label for="description">
+          <label htmlFor="description">
             <span>
               Description <span className={classes.required}>*</span>
             </span>
