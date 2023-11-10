@@ -31,9 +31,19 @@ const dashboard = (props) => {
           Thank You for being a part of LostNest community and helping each
           other.
         </h3>
-        <h1 style={{ fontSize: "3rem", textDecoration: "underline" }}>
+        <h6
+          style={{
+            color: "#2e186a",
+            margin: "auto",
+            fontSize: "2.575rem",
+            padding: "0.5rem 0",
+            borderBottom: "3px solid #2e186a",
+            width: "15rem",
+            textAlign: "center",
+          }}
+        >
           Posted Items
-        </h1>
+        </h6>
       </div>
 
       <AllItems />

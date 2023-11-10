@@ -12,7 +12,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-
+.content {
+  overflow: hidden;
+}
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .item {
     width: 80%;

@@ -9,19 +9,26 @@ const SpecificGrid = (props) => {
   }
 
   return (
-    <ul
+    <div
       style={{
         display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "1rem",
+        height: "100vh",
+        marginLeft: "10rem",
       }}
     >
-      {data.map((post) => (
-        <Specificitem key={post._id} data={post} />
-      ))}
-    </ul>
+      <ul
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+        }}
+      >
+        {data.map((post) => (
+          <Specificitem key={post._id} data={post} />
+        ))}
+      </ul>
+    </div>
   );
 };
 
