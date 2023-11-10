@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Loading from "../UI/Loading";
 import PersonalProfile from "./profilecomp/userprofile-comp";
 import ErrorComp from "../UI/ErrorComp";
-//import ProfileNav from "./profile-nav";
 
 function ProfileFront() {
   const [isData, setIsData] = useState("");
@@ -38,9 +37,9 @@ function ProfileFront() {
   if (isError) {
     return <ErrorComp errorData={isErrorData} />;
   }
+
   return (
     <Fragment>
-      {/* <ProfileNav /> */}
       <PersonalProfile
         name={isData.name}
         id={isData._id}
