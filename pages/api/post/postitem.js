@@ -42,20 +42,25 @@ async function handler(req, res) {
     res.status(201).json({ message: "Item Posted!" });
     client.close();
   } else {
+    const client = await connectToDatabase();
     try {
-      const client = await connectToDatabase();
       const db = client.db();
 
       const data = await db.collection("PostedItem").find({}).toArray();
-      //console.log(data);
+
       res.status(200).json(data);
       client.close();
     } catch (error) {
-      // console.error("Error:", error);
+      console.error("Error:", error);
       res.status(500).json({
         message: "Internal Server Error: Unable to fetch and Display Posts",
       });
       client.close();
+    } finally {
+      // Close the client in the finally block to ensure it happens in all cases
+      if (client) {
+        await client.close();
+      }
     }
   }
 }

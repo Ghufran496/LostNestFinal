@@ -36,12 +36,21 @@ function Specificitem(props) {
           style={{ overflow: "scroll" }}
         ></img>
       </div>
-      <div className={classes.content}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          marginLeft: "1rem",
+        }}
+      >
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
+            gridGap: "1.5rem",
             marginTop: "1rem",
+            marginLeft: "1.5rem",
           }}
         >
           <h1
@@ -69,41 +78,32 @@ function Specificitem(props) {
             marginBottom: "1rem",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <h2 style={{ textTransform: "capitalize" }}>Category: {Category}</h2>
-          <h2 style={{ textTransform: "capitalize" }}>Item Name: {Title}</h2>
+          <h2 style={{ textTransform: "capitalize" }}>
+            <i>Category:</i> {Category}
+          </h2>
+          <h2 style={{ textTransform: "capitalize" }}>
+            <i>Item Name:</i> {Title}
+          </h2>
         </div>
-        <h3
+
+        <div
+          className={classes.actions}
           style={{
-            textTransform: "capitalize",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <span
-            style={{
-              fontWeight: "bolder",
-              fontSize: "1.5rem",
-            }}
-          >
-            Description:&nbsp;
-          </span>
-          {Description}
-        </h3>
-      </div>
-      <div
-        className={classes.actions}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Link href={detailLink}>
-          <a>
-            <Button content="View Details" />
-          </a>
-        </Link>
+          <Link href={detailLink}>
+            <a>
+              <Button content="Check Response" />
+            </a>
+          </Link>
+        </div>
       </div>
     </li>
   );

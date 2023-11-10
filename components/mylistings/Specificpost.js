@@ -11,6 +11,8 @@ function Specificpost() {
   const [isErrorData, setIsErrorData] = useState(
     "Sorry but the page you are looking for does not exist."
   );
+  const [isPosts, setIsPosts] = useState("");
+
   useEffect(() => {
     let isMounted = true; // Flag to track if the component is mounted
 
@@ -20,16 +22,21 @@ function Specificpost() {
       .then((response) => response.json())
       .then((data) => {
         if (isMounted) {
-          console.log(data);
+          //console.log(data);
 
           const dataArray = Array.isArray(data) ? data : [data];
-          console.log(dataArray);
+          //console.log(dataArray);
+          if (dataArray.length === 0) {
+            setIsPosts("You have not Listed any Posts Yet...");
+          }
+
           setIsData(dataArray);
 
           if (data.message) {
             setIsErrorData(data.message);
             setIsError(true);
           }
+
           setIsLoading(false);
         }
       })
@@ -47,6 +54,22 @@ function Specificpost() {
       isMounted = false; // Set flag to false when component is unmounted
     };
   }, [setIsData, setIsError, setIsErrorData]);
+
+  if (isPosts) {
+    return (
+      <h1
+        style={{
+          textTransform: "capitalize",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "2rem",
+        }}
+      >
+        {isPosts}
+      </h1>
+    );
+  }
 
   if (isError) {
     return <ErrorComp errorData={isErrorData} />;
