@@ -14,3 +14,5 @@
 //     loader: "default",
 //   },
 // };
+// next.config.js
+module.exports = {};

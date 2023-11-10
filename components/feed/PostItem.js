@@ -77,6 +77,7 @@ function PostItem(props) {
         <h3
           style={{
             textTransform: "capitalize",
+            overflow: "hidden",
           }}
         >
           <span

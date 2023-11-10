@@ -90,6 +90,7 @@ function PostNewItem() {
 
     return data;
   }
+
   function converttobase64(e) {
     // console.log(e);
 
@@ -136,6 +137,7 @@ function PostNewItem() {
     );
 
     event.target.reset(); // This resets the form
+    setIsImage(""); // Clear the image state
     setIsLoading(false);
   };
 

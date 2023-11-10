@@ -136,6 +136,7 @@ function FoundNewItem() {
 
     // console.log(result);
     event.target.reset(); // This resets the form
+    setIsImage(""); // Clear the image state
     setIsLoading(false);
   };
 

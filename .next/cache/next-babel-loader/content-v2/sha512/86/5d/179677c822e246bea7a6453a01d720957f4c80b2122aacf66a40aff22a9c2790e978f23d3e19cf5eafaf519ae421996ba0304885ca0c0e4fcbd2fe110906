@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\n\nvar MyResponses = function MyResponses() {\n  return /*#__PURE__*/_jsx(\"div\", {\n    children: \"i am my MyResponses\"\n  });\n};\n\nexport default MyResponses;","map":null,"metadata":{},"sourceType":"module"}

@@ -35,7 +35,6 @@ const dashboard = (props) => {
           Posted Items
         </h1>
       </div>
-      {/* <button onClick={getAllEvents}>load</button> */}
 
       <AllItems />
     </Fragment>
