@@ -7,6 +7,7 @@ import EventContent from "../../components/feed/FeedDetails/event-content";
 import { useState, useEffect } from "react";
 import { Fragment } from "react";
 import Head from "next/head";
+import Answer from "../../components/answers/answer";
 
 import { getPostDataById } from "../../lib/db";
 
@@ -54,6 +55,8 @@ function specificid(props) {
       <EventContent>
         <p>{event.Description}</p>
       </EventContent>
+
+      <Answer postid={event._id} />
     </Fragment>
   );
 }
