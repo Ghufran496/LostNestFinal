@@ -6,39 +6,6 @@ import { useRef, useState } from "react";
 import Loading from "../UI/Loading";
 import ErrorComp from "../UI/ErrorComp";
 
-// async function sendPostData(
-//   Type,
-//   Category,
-//   Title,
-//   Description,
-//   Question,
-//   Date,
-//   imageInbase64
-// ) {
-//   const response = await fetch("/api/post/postitem", {
-//     method: "POST",
-//     body: JSON.stringify({
-//       Type,
-//       Category,
-//       Title,
-//       Description,
-//       Question,
-//       Date,
-//       ReducedImg: imageInbase64,
-//     }),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   });
-
-//   const data = await response.json();
-
-//   if (!response.ok) {
-//     throw new Error(data.message || "Something went wrong!");
-//   }
-
-//   return data;
-// }
 function FoundNewItem() {
   const [isLoading, setIsLoading] = useState(false);
   const [isImage, setIsImage] = useState("");
