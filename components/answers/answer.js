@@ -7,15 +7,65 @@ function Answer(props) {
   const { postid } = props;
   //console.log(postid);
   const [showResponse, setShowResponse] = useState(false);
+  const [showLoadingContent, setLoadingContent] = useState(false);
   const [response, setresponse] = useState([]);
 
   useEffect(() => {
-    if (showResponse) {
-      fetch("/api/answers/" + postid)
-        .then((response) => response.json())
-        .then((data) => setresponse(data.responses));
+    const fetchData = async () => {
+      if (showResponse) {
+        setLoadingContent(true);
+        try {
+          const response = await fetch("/api/answers/" + postid);
+          const data = await response.json();
+          setresponse(data.responses);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          // Handle errors as needed
+        } finally {
+          setLoadingContent(false);
+        }
+      }
+    };
+
+    // Only fetch data if showResponse is true and responses are not already available
+    if (showResponse && response.length === 0) {
+      fetchData();
     }
-  }, [showResponse]);
+  }, [showResponse, postid, setresponse, setLoadingContent]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     if (showResponse) {
+  //       setLoadingContent(true);
+  //       try {
+  //         const response = await fetch("/api/answers/" + postid);
+  //         const data = await response.json();
+  //         setresponse(data.responses);
+  //         if (data.responses) {
+  //           setLoadingContent(false);
+  //         }
+  //       } catch (error) {
+  //         console.error("Error fetching data:", error);
+  //         // Handle errors as needed
+  //         setLoadingContent(false);
+  //       }
+  //     }
+
+  //     setLoadingContent(false);
+  //   };
+
+  //   fetchData();
+  //   //setLoadingContent(false);
+  // }, [showResponse, postid, setresponse, setLoadingContent]);
+
+  // useEffect(() => {
+  //   //setLoadingContent(true);
+  //   if (showResponse) {
+  //     fetch("/api/answers/" + postid)
+  //       .then((response) => response.json())
+  //       .then((data) => setresponse(data.responses));
+  //   }
+  //   setLoadingContent(false);
+  // }, [showResponse, setLoadingContent]);
 
   function toggleResponseHandler() {
     setShowResponse((prevStatus) => !prevStatus);
@@ -25,10 +75,12 @@ function Answer(props) {
     <section className={classes.responses}>
       <div className={classes.btndiv}>
         <button onClick={toggleResponseHandler} className={classes.button52}>
-          {showResponse ? "Hide" : "Show"} Response
+          {showResponse ? "Hide" : "Show"} Responses
         </button>
       </div>
-
+      {showLoadingContent && (
+        <p style={{ marginBottom: "1rem" }}>No responses yet!</p>
+      )}
       {showResponse && <AnswerList ansitems={response} />}
     </section>
   );
