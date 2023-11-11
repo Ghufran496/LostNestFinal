@@ -11,7 +11,7 @@ async function handler(req, res) {
     try {
       //console.log(PostId);
       const documents = await getResponseDataById(PostId);
-      console.log(documents);
+
       res.status(200).json({
         responses: documents,
       });
