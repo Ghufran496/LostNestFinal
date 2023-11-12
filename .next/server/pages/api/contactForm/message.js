@@ -183,7 +183,9 @@ async function connectToDatabase() {
     return cachedClient;
   }
 
-  const client = await mongodb__WEBPACK_IMPORTED_MODULE_0__["MongoClient"].connect("mongodb+srv://ghufran:Allahis1@cluster0.psik2ae.mongodb.net/authSec14?retryWrites=true&w=majority", {
+  let client;
+  const connectionString = `mongodb+srv://${"ghufran"}:${"Allahis1"}@${"cluster0"}.psik2ae.mongodb.net/${"authSec15"}?retryWrites=true&w=majority`;
+  client = await mongodb__WEBPACK_IMPORTED_MODULE_0__["MongoClient"].connect(connectionString, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     connectTimeoutMS: 30000
@@ -219,7 +221,43 @@ async function getResponseDataById(id) {
     PostID: id
   }).toArray();
   return user;
-} // export async function getPostsByEmail(email) {
+}
+/*
+
+
+import { MongoClient } from "mongodb";
+const { ObjectId } = require("mongodb");
+
+let cachedClient = null;
+let clientSet = false;
+
+export async function connectToDatabase() {
+  if (clientSet) {
+    console.log("return already stored client" + cachedClient);
+    return cachedClient;
+  }
+
+  const client = await MongoClient.connect(
+    "mongodb+srv://ghufran:Allahis1@cluster0.psik2ae.mongodb.net/authSec14?retryWrites=true&w=majority",
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+      connectTimeoutMS: 30000,
+    }
+  );
+
+  if (!clientSet) {
+    cachedClient = client;
+    clientSet = true;
+    console.log("return new client");
+  }
+
+  return client;
+}
+
+
+*/
+// export async function getPostsByEmail(email) {
 //   //console.log(email);
 //   const allPosts = await getAllPosts();
 //   //console.log(allPosts);
