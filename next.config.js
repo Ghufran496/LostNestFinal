@@ -15,4 +15,26 @@
 //   },
 // };
 // next.config.js
-module.exports = {};
+const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+
+module.exports = (phase) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
+    return {
+      env: {
+        mongodb_username: "ghufran",
+        mongodb_password: "Allahis1",
+        mongodb_clustername: "cluster0",
+        mongodb_database: "authSec14",
+      },
+    };
+  }
+
+  return {
+    env: {
+      mongodb_username: "ghufran",
+      mongodb_password: "Allahis1",
+      mongodb_clustername: "cluster0",
+      mongodb_database: "authSec15",
+    },
+  };
+};
