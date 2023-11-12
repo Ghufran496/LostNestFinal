@@ -20,7 +20,7 @@ function AllItems() {
     fetch("/api/post/postitem")
       .then((response) => response.json())
       .then((data) => {
-        //console.log(data);
+        //console.log("data in client" + data);
         if (isMounted) {
           setIsData(data);
           if (data.message) {
@@ -39,11 +39,11 @@ function AllItems() {
         console.error("Fetch error:", error);
       });
 
-    // Cleanup function
+    //Cleanup function
     return () => {
       isMounted = false; // Set flag to false when component is unmounted
     };
-  }, [setIsData, setIsError, setIsErrorData]);
+  }, []);
 
   if (isError) {
     return <ErrorComp errorData={isErrorData} />;

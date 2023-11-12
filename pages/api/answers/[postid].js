@@ -9,7 +9,6 @@ async function handler(req, res) {
 
   if (req.method === "GET") {
     try {
-      //console.log(PostId);
       const documents = await getResponseDataById(PostId);
 
       res.status(200).json({

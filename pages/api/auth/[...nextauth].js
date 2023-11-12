@@ -20,7 +20,7 @@ export default NextAuth({
         });
 
         if (!user) {
-          client.close();
+          //client.close();
           throw new Error("User does not exist");
         }
 
@@ -30,11 +30,11 @@ export default NextAuth({
         );
 
         if (!isValid) {
-          client.close();
+          //client.close();
           throw new Error("Incorrect Password");
         }
 
-        client.close();
+        //client.close();
         return { email: user.email };
       },
     }),

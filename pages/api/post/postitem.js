@@ -1,4 +1,4 @@
-import { connectToDatabase } from "../../../lib/db";
+import { connectToDatabase, getAllPosts } from "../../../lib/db";
 import { getSession } from "next-auth/client";
 
 async function handler(req, res) {
@@ -42,25 +42,14 @@ async function handler(req, res) {
     res.status(201).json({ message: "Item Posted!" });
     client.close();
   } else {
-    const client = await connectToDatabase();
     try {
-      const db = client.db();
-
-      const data = await db.collection("PostedItem").find({}).toArray();
-
+      const data = await getAllPosts();
       res.status(200).json(data);
-      client.close();
     } catch (error) {
       console.error("Error:", error);
       res.status(500).json({
         message: "Internal Server Error: Unable to fetch and Display Posts",
       });
-      client.close();
-    } finally {
-      // Close the client in the finally block to ensure it happens in all cases
-      if (client) {
-        await client.close();
-      }
     }
   }
 }

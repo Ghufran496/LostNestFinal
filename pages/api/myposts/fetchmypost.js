@@ -1,5 +1,5 @@
-import { getPostsByEmail } from "../../../lib/db";
 import { getSession } from "next-auth/client";
+import { connectToDatabase } from "../../../lib/db";
 
 async function handler(req, res) {
   if (req.method === "POST") {
@@ -14,7 +14,16 @@ async function handler(req, res) {
     try {
       const userEmail = session.user.email;
 
-      const data = await getPostsByEmail(userEmail);
+      //const data = await getPostsByEmail(userEmail);
+      const client = await connectToDatabase();
+
+      const usersCollection = client.db().collection("PostedItem");
+
+      const data = await usersCollection
+        .find({
+          posterEmail: userEmail,
+        })
+        .toArray();
 
       res.status(200).json(data);
     } catch (error) {
