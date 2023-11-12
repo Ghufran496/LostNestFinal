@@ -32,40 +32,6 @@ function Answer(props) {
       fetchData();
     }
   }, [showResponse, postid, setresponse, setLoadingContent]);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     if (showResponse) {
-  //       setLoadingContent(true);
-  //       try {
-  //         const response = await fetch("/api/answers/" + postid);
-  //         const data = await response.json();
-  //         setresponse(data.responses);
-  //         if (data.responses) {
-  //           setLoadingContent(false);
-  //         }
-  //       } catch (error) {
-  //         console.error("Error fetching data:", error);
-  //         // Handle errors as needed
-  //         setLoadingContent(false);
-  //       }
-  //     }
-
-  //     setLoadingContent(false);
-  //   };
-
-  //   fetchData();
-  //   //setLoadingContent(false);
-  // }, [showResponse, postid, setresponse, setLoadingContent]);
-
-  // useEffect(() => {
-  //   //setLoadingContent(true);
-  //   if (showResponse) {
-  //     fetch("/api/answers/" + postid)
-  //       .then((response) => response.json())
-  //       .then((data) => setresponse(data.responses));
-  //   }
-  //   setLoadingContent(false);
-  // }, [showResponse, setLoadingContent]);
 
   function toggleResponseHandler() {
     setShowResponse((prevStatus) => !prevStatus);
@@ -79,7 +45,28 @@ function Answer(props) {
         </button>
       </div>
       {showLoadingContent && (
-        <p style={{ marginBottom: "1rem" }}>No responses yet!</p>
+        <p
+          style={{
+            marginBottom: "1rem",
+            color: "red",
+            fontSize: "2rem",
+            textTransform: "capitalize",
+          }}
+        >
+          No responses yet!
+        </p>
+      )}
+      {response.length === 0 && !showLoadingContent && (
+        <p
+          style={{
+            marginBottom: "1rem",
+            color: "red",
+            fontSize: "2rem",
+            textTransform: "capitalize",
+          }}
+        >
+          NoOne has responded yet!
+        </p>
       )}
       {showResponse && <AnswerList ansitems={response} />}
     </section>
@@ -87,3 +74,38 @@ function Answer(props) {
 }
 
 export default Answer;
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     if (showResponse) {
+//       setLoadingContent(true);
+//       try {
+//         const response = await fetch("/api/answers/" + postid);
+//         const data = await response.json();
+//         setresponse(data.responses);
+//         if (data.responses) {
+//           setLoadingContent(false);
+//         }
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//         // Handle errors as needed
+//         setLoadingContent(false);
+//       }
+//     }
+
+//     setLoadingContent(false);
+//   };
+
+//   fetchData();
+//   //setLoadingContent(false);
+// }, [showResponse, postid, setresponse, setLoadingContent]);
+
+// useEffect(() => {
+//   //setLoadingContent(true);
+//   if (showResponse) {
+//     fetch("/api/answers/" + postid)
+//       .then((response) => response.json())
+//       .then((data) => setresponse(data.responses));
+//   }
+//   setLoadingContent(false);
+// }, [showResponse, setLoadingContent]);

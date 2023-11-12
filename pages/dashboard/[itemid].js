@@ -176,6 +176,7 @@ function ItemDetailPage(props) {
 export async function getServerSideProps(context) {
   const postId = context.params.itemid;
   const postData = await getPostDataById(postId);
+  //console.log(postData);
 
   return {
     props: {
