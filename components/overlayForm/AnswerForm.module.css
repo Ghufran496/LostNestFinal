@@ -1,0 +1,33 @@
+.backer {
+  /* background-color: rgb(100, 88, 88);
+    font-size: 1rem;
+    color: white;
+  
+    height: 50rem;
+    margin-left: 20rem;
+    width: 50%;
+    position: absolute;
+  
+    right: 20; */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Set the width to cover the entire viewport */
+  height: 100%; /* Set the height to cover the entire viewport */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  /* 49, 20, 102 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  background-color: rgb(49, 20, 102);
+
+  color: white;
+  width: 40%;
+  border-radius: 10rem;
+
+  padding: 3rem;
+}

@@ -6,6 +6,7 @@ async function handler(req, res) {
     return res.status(405).json({ message: "Method Not Allowed" });
   }
   const client = await connectToDatabase();
+
   try {
     const session = await getSession({ req });
 
@@ -31,10 +32,6 @@ async function handler(req, res) {
   } catch (error) {
     console.error("Error handling profile data:", error);
     return res.status(500).json({ message: "Internal Server Error" });
-  } finally {
-    if (client) {
-      client.close();
-    }
   }
 }
 

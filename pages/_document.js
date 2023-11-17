@@ -8,7 +8,8 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <div id="notifications"></div>
+          <div id="Questions"></div>
+          <div id="Answers"></div>
         </body>
       </Html>
     );

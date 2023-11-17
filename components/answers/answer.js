@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import AnswerList from "./answer-list";
 import classes from "./answer.module.css";
-
+//http://localhost:3000/mylistings/654bc2921efc6c1070461e13
 function Answer(props) {
   const { postid } = props;
   //console.log(postid);
@@ -31,7 +31,7 @@ function Answer(props) {
     if (showResponse && response.length === 0) {
       fetchData();
     }
-  }, [showResponse, postid, setresponse, setLoadingContent]);
+  }, []);
 
   function toggleResponseHandler() {
     setShowResponse((prevStatus) => !prevStatus);
