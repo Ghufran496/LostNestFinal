@@ -10,7 +10,7 @@ function QuestionForm(props) {
         <Form oncancle={props.onclose} data2={props.data} />
       </div>
     </div>,
-    document.getElementById("notifications")
+    document.getElementById("Questions")
   );
 }
 

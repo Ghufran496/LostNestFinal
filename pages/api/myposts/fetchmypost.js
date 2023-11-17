@@ -10,10 +10,8 @@ async function handler(req, res) {
       res.status(401).json({ message: "Not authenticated!" });
       return;
     }
-
+    const userEmail = session.user.email;
     try {
-      const userEmail = session.user.email;
-
       //const data = await getPostsByEmail(userEmail);
       const client = await connectToDatabase();
 

@@ -53,7 +53,7 @@ function Specificpost() {
     return () => {
       isMounted = false; // Set flag to false when component is unmounted
     };
-  }, [setIsData, setIsError, setIsErrorData]);
+  }, []);
 
   if (isPosts) {
     return (

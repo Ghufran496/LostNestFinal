@@ -8,12 +8,13 @@ function Form(props) {
   const [isLoading, setIsLoading] = useState(false);
   const answerInputRef = useRef();
 
-  async function sendQuestionData(enteredAnswer, postID) {
+  async function sendQuestionData(enteredAnswer, postID, ItemTitle) {
     const response = await fetch("/api/qresponse/QuestionResponse", {
       method: "POST",
       body: JSON.stringify({
         enteredAnswer,
         postID,
+        ItemTitle,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -29,14 +30,15 @@ function Form(props) {
     return data;
   }
   const postID = props.data2._id;
-  console.log(postID);
+  const ItemTitle = props.data2.Title;
+  //console.log(postID);
   const answerSubmitHandler = async (event) => {
     event.preventDefault();
     setIsLoading(true);
 
     const enteredAnswer = answerInputRef.current.value;
 
-    const result = await sendQuestionData(enteredAnswer, postID);
+    const result = await sendQuestionData(enteredAnswer, postID, ItemTitle);
 
     // console.log(result);
     event.target.reset(); // This resets the form

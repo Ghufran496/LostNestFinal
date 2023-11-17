@@ -12,7 +12,7 @@ async function handler(req, res) {
     }
 
     const answerGivenBY = session.user.email;
-    const { enteredAnswer, postID } = data;
+    const { enteredAnswer, postID, ItemTitle } = data;
 
     if (!enteredAnswer || !postID || !answerGivenBY) {
       return res.status(400).json({ message: "fields are empty!" });
@@ -26,6 +26,7 @@ async function handler(req, res) {
       Answer: enteredAnswer,
       PostID: postID,
       PosterID: answerGivenBY,
+      ItemTitle: ItemTitle,
     });
 
     res.status(201).json({ message: "Answer Submitted" });
