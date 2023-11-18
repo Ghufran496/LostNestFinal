@@ -27,7 +27,9 @@ function EventLogistics(props) {
               <TodayOutline color={"#00000"} beat height="25px" width="25px" />
             </span>
 
-            <time style={{ fontSize: "2rem" }}>{Date}</time>
+            <time style={{ fontSize: "2rem" }}>
+              <span className={classes.timer}> {Date}</span>
+            </time>
           </LogisticsItem>
           <LogisticsItem>
             <span className={classes.spaner}>

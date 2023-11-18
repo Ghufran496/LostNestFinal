@@ -51,7 +51,7 @@ const AllResponses = () => {
 
   return (
     <div>
-      {isData.length === 0 ? (
+      {isData.length === 0 && !isLoading ? (
         <p
           style={{
             fontSize: "2rem",

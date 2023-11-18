@@ -67,13 +67,13 @@ function Form(props) {
   };
 
   if (isLoading) {
-    return <div style={{ fontSize: "1.5rem" }}>Submiting response...</div>;
+    return <div style={{ fontSize: "1.5rem" }}>Submitting response...</div>;
   }
 
   return (
     <form className={classes.main} onSubmit={answerSubmitHandler}>
       <label htmlFor="question" className={classes.labels}>
-        Question
+        Question?
       </label>
       <br />
       <span id="questionContent" className={classes.span1}>

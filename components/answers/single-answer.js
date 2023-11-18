@@ -16,15 +16,13 @@ const SingleAnswer = (props) => {
   };
   return (
     <li className={classes.list}>
-      <div className={classes.btndiv}>
-        <button
-          className={classes.button52}
-          role="button"
-          onClick={showModeHandler}
-        >
-          Check answer
-        </button>
-      </div>
+      <p className={classes.linkpara}>
+        <a onClick={showModeHandler} className={classes.link}>
+          Check
+        </a>
+        &nbsp; Response by this user.
+      </p>
+
       <div className={classes.responder}>
         <p>By {PosterID}</p>
       </div>
