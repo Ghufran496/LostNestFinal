@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import PostGrid from "./PostGrid";
 import ErrorComp from "../UI/ErrorComp";
-// import Loader from "../UI/Loader";
+
 import Loading from "../UI/Loading";
 function AllItems() {
   const [isData, setIsData] = useState("");

@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { Fragment } from "react";
 import Head from "next/head";
 import Answer from "../../components/answers/answer";
+import { getSession } from "next-auth/client";
 
 import { getPostDataById } from "../../lib/db";
 
@@ -65,6 +66,15 @@ export async function getServerSideProps(context) {
   const { specificid } = params;
 
   const postData = await getPostDataById(specificid);
+  const session = await getSession({ req: context.req });
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth",
+        permanent: false,
+      },
+    };
+  }
 
   return {
     props: {
@@ -72,5 +82,21 @@ export async function getServerSideProps(context) {
     },
   };
 }
+// export async function getServerSideProps(context) {
+//   const session = await getSession({ req: context.req });
+
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/auth",
+//         permanent: false,
+//       },
+//     };
+//   }
+
+//   return {
+//     props: { session },
+//   };
+// }
 
 export default specificid;
