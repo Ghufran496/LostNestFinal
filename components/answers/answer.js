@@ -5,7 +5,7 @@ import classes from "./answer.module.css";
 //http://localhost:3000/mylistings/654bc2921efc6c1070461e13
 function Answer(props) {
   const { postid } = props;
-  //console.log(postid);
+  console.log(postid);
   const [showResponse, setShowResponse] = useState(false);
   const [showLoadingContent, setLoadingContent] = useState(false);
   const [response, setresponse] = useState([]);
@@ -31,7 +31,7 @@ function Answer(props) {
     if (showResponse && response.length === 0) {
       fetchData();
     }
-  }, []);
+  }, [showResponse]);
 
   function toggleResponseHandler() {
     setShowResponse((prevStatus) => !prevStatus);
@@ -48,8 +48,8 @@ function Answer(props) {
         <p
           style={{
             marginBottom: "1rem",
-            color: "red",
-            fontSize: "2rem",
+
+            fontSize: "1.5rem",
             textTransform: "capitalize",
           }}
         >
@@ -60,12 +60,12 @@ function Answer(props) {
         <p
           style={{
             marginBottom: "1rem",
-            color: "red",
-            fontSize: "2rem",
+
+            fontSize: "1.5rem",
             textTransform: "capitalize",
           }}
         >
-          NoOne has responded yet!
+          Noone has responded yet!
         </p>
       )}
       {showResponse && <AnswerList ansitems={response} />}

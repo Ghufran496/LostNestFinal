@@ -24,10 +24,25 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
+    "/auth": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/auth.js"
+    ],
     "/dashboard": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/dashboard.js"
+    ],
+    "/dashboard/[itemid]": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/dashboard/[itemid].js"
+    ],
+    "/mylistings": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/mylistings.js"
     ],
     "/mylistings/[specificid]": [
       "static/chunks/main.js",
@@ -38,6 +53,11 @@
       "static/chunks/main.js",
       "static/chunks/webpack.js",
       "static/chunks/pages/postfounditem.js"
+    ],
+    "/responses": [
+      "static/chunks/main.js",
+      "static/chunks/webpack.js",
+      "static/chunks/pages/responses.js"
     ]
   },
   "ampFirstPages": []

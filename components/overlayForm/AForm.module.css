@@ -10,12 +10,26 @@
   text-transform: uppercase;
   font-weight: 500;
 }
-.diver p {
+.diver h2 {
+  color: black;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.para1 {
+  font-size: 2.5rem;
+}
+
+.borderdiv {
+  border: 1px solid white;
+  padding: 2rem;
+}
+/* .diver p {
   text-transform: capitalize;
   font-size: 2rem;
   font-weight: bolder;
   color: black;
-}
+} */
 /* CSS */
 .button89 {
   --b: 3px; /* border thickness */

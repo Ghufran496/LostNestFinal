@@ -1,0 +1,33 @@
+.spaner {
+  font-size: 2rem;
+
+  color: #311465;
+  text-transform: capitalize;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  color: #000;
+  background: #fff;
+  line-height: 12px;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: #311465 -2px -2px 0px 2px, rgb(0, 0, 0) 0px 0px 0px 4px,
+    rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  box-shadow: rgb(0, 0, 0) -2px -2px 0px 2px, #311465 0px 0px 0px 4px,
+    rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+  transform: scale(1.01);
+}
