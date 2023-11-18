@@ -79,65 +79,80 @@ const ResponseItem = (props) => {
       style={{
         fontSize: "1.5rem",
         border: "1px solid #311465",
-        padding: "2rem 8rem 2rem 2rem",
+        padding: "2rem",
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
         fontWeight: "400",
-        borderRadius: "2.5rem",
-        position: "relative", // Necessary for positioning the hidden div
+        borderRadius: "1rem",
+        position: "relative",
+        overflow: "hidden", // Hide overflow for a cleaner look
       }}
     >
-      <h3>
-        Item ID: <span className={classes.spaner}>{PostID}</span>
-      </h3>
-      <h3>
-        Item Name: <span className={classes.spaner}>{ItemTitle}</span>
-      </h3>
-      <h3>
-        Question: <span className={classes.spaner}>{Question}</span>
-      </h3>
-      <h3>
-        Your Answer: <span className={classes.spaner}>{Answer}</span>
-      </h3>
-      <h3>
-        Time: <span className={classes.spaner}>{ValidatorDateTime}</span>
-      </h3>
-
-      {isDivVisible || (
-        <button className={classes.btn} onClick={handleButtonClick}>
-          Show Response
-        </button>
-      )}
-      {isDivVisible && (
-        <div
-          style={{
-            padding: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "5rem",
-          }}
-        >
-          <h4>
-            Response :{" "}
-            <span style={{ color: "#311465" }}>{enteredContact}</span>
-          </h4>
+      <div
+        style={{
+          background: "#311465",
+          height: "100%",
+          width: "4px",
+          position: "absolute",
+          left: 0,
+          top: 0,
+        }}
+      ></div>
+      <div style={{ marginLeft: "4rem" }}>
+        <h3>
+          Item ID: <span className={classes.spaner}>{PostID}</span>
+        </h3>
+        <h3>
+          Item Name: <span className={classes.spaner}>{ItemTitle}</span>
+        </h3>
+        <h3>
+          Question? <span className={classes.spaner}>{Question}</span>
+        </h3>
+        <h3>
+          Your Answer: <span className={classes.spaner}>{Answer}</span>
+        </h3>
+        <h3>
+          Time: <span className={classes.spaner}>{ValidatorDateTime}</span>
+        </h3>
+        <div style={{ textAlign: "center", marginTop: "2rem" }}>
+          {isDivVisible || (
+            <button className={classes.btn} onClick={handleButtonClick}>
+              Show Response
+            </button>
+          )}
+        </div>
+        {isDivVisible && (
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gridGap: "1rem",
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "1rem",
+              background: "#f4f4f4",
             }}
           >
-            <button className={classes.btn} onClick={handleButtonClick}>
-              Close
-            </button>
-            <button className={classes.btn} onClick={deleteButtonClick}>
-              Delete
-            </button>
+            <h4>
+              Response :{" "}
+              <span style={{ color: "#311465" }}>{enteredContact}</span>
+            </h4>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gridGap: "1rem",
+              }}
+            >
+              <button className={classes.btn} onClick={handleButtonClick}>
+                Close
+              </button>
+              <button className={classes.btn} onClick={deleteButtonClick}>
+                Delete
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </li>
   );
 };

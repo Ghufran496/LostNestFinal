@@ -8,6 +8,7 @@ import QuestionForm from "../../components/overlayForm/QuestionForm";
 import classes from "./itemid.module.css";
 import { getPostDataById } from "../../lib/db";
 import { getSession } from "next-auth/client";
+import Button from "../../components/UI/Button";
 
 import Loading from "../../components/UI/Loading";
 
@@ -64,13 +65,9 @@ function ItemDetailPage(props) {
         <p>{event.Description}</p>
       </EventContent>
       <div className={classes.btndiv}>
-        <button
-          onClick={showModeHandler}
-          className={classes.button52}
-          role="button"
-        >
-          Claim this {event.Title}
-        </button>
+        <a onClick={showModeHandler}>
+          <Button content={`Claim This ${event.Title}`}></Button>
+        </a>
       </div>
 
       {showQForm && <QuestionForm onclose={hideModeHandler} data={event} />}

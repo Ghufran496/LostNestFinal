@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import ErrorComp from "../UI/ErrorComp";
 import SpecificGrid from "./SpecificGrid";
 import Loading from "../UI/Loading";
+import classes from "./specificpost.module.css";
 
 function Specificpost() {
   const [isData, setIsData] = useState("");
@@ -11,7 +12,6 @@ function Specificpost() {
   const [isErrorData, setIsErrorData] = useState(
     "Sorry but the page you are looking for does not exist."
   );
-  const [isPosts, setIsPosts] = useState("");
 
   useEffect(() => {
     let isMounted = true; // Flag to track if the component is mounted
@@ -26,9 +26,6 @@ function Specificpost() {
 
           const dataArray = Array.isArray(data) ? data : [data];
           //console.log(dataArray);
-          if (dataArray.length === 0) {
-            setIsPosts("You have not Listed any Posts Yet...");
-          }
 
           setIsData(dataArray);
 
@@ -55,29 +52,27 @@ function Specificpost() {
     };
   }, []);
 
-  if (isPosts) {
-    return (
-      <h1
-        style={{
-          textTransform: "capitalize",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: "2rem",
-        }}
-      >
-        {isPosts}
-      </h1>
-    );
-  }
-
   if (isError) {
     return <ErrorComp errorData={isErrorData} />;
   }
 
   return (
-    <div>
-      <SpecificGrid data={isData} />
+    <div className={classes.div1}>
+      {isData.length === 0 && !isLoading ? (
+        <p
+          style={{
+            fontSize: "2rem",
+            display: "flex",
+            marginTop: "1rem",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          You have not Listed any Posts
+        </p>
+      ) : (
+        <SpecificGrid data={isData} />
+      )}
       {isLoading && <Loading />}
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import Loading from "../UI/Loading";
 import Specificitem from "./SpecificItem";
+import classes from "./SpecificGrid.module.css";
 
 const SpecificGrid = (props) => {
   const { data } = props;
@@ -9,21 +10,8 @@ const SpecificGrid = (props) => {
   }
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-        marginLeft: "10rem",
-      }}
-    >
-      <ul
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-        }}
-      >
+    <div className={classes.div1}>
+      <ul className={classes.ul1}>
         {data.map((post) => (
           <Specificitem key={post._id} data={post} />
         ))}

@@ -87,19 +87,15 @@ function AForm(props) {
         <DetailForm close={props.oncancle} senderData={props.data2} />
       ) : (
         <div className={classes.diver}>
-          <h1 style={{ textDecoration: "underline" }}>Validation Form</h1>
-          <h2>Question</h2>
+          <h3>{SubmittedDateTime}</h3>
+          <h2>Question?</h2>
           <p className={classes.para1}>{Question}</p>
-          <div className={classes.borderdiv}>
-            <h2 style={{ borderBottom: "1px solid white" }}>
-              Answer : {Answer}
-            </h2>
-            <h2>Date: {SubmittedDateTime}</h2>
-          </div>
+          <h2>Answer</h2>
+          <p className={classes.para1}>{Answer}</p>
 
-          <div>
+          <div className={classes.btndiver}>
             <button
-              className={classes.button89}
+              className={classes.button90}
               type="button"
               role="button"
               onClick={yesHandler}
@@ -107,7 +103,7 @@ function AForm(props) {
               Yes
             </button>
             <button
-              className={classes.button89}
+              className={classes.button90}
               type="button"
               role="button"
               onClick={noHandler}
@@ -115,7 +111,7 @@ function AForm(props) {
               No
             </button>
             <button
-              className={classes.button89}
+              className={classes.button90}
               type="button"
               role="button"
               onClick={props.oncancle}

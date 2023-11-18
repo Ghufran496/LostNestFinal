@@ -71,13 +71,13 @@ const DetailForm = (props) => {
   return (
     <Fragment>
       <form className={classes.form} onSubmit={InfosubmitHandler}>
-        <label for="contactInformations">Enter your Contact Informations</label>
+        <label for="contactInformations">Enter Contact Informations</label>
         <textarea
           type="text"
           name="contactInformations"
           rows="4"
           cols="40"
-          placeholder="Enter your Gmail / Cellno"
+          placeholder="your Gmail or cell number."
           ref={ResponseData}
           required
         ></textarea>

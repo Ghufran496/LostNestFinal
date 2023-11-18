@@ -51,10 +51,27 @@ function AllItems() {
 
   return (
     <div>
-      <PostGrid data={isData} />
+      {isData.length === 0 && !isLoading ? (
+        <p
+          style={{
+            fontSize: "2rem",
+            display: "flex",
+            marginTop: "1rem",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          No Posts Found...
+        </p>
+      ) : (
+        <PostGrid data={isData} />
+      )}
       {isLoading && <Loading />}
     </div>
   );
 }
-
+// {
+//   /* <PostGrid data={isData} />
+//       {isLoading && <Loading />} */
+// }
 export default AllItems;

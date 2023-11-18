@@ -19,6 +19,7 @@
 
 .btndiv {
   text-align: center;
+  margin-top: 1.5rem;
 }
 .button52:after {
   content: "";
