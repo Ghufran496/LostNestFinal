@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import ErrorComp from "../UI/ErrorComp";
 import SpecificGrid from "./SpecificGrid";
 import Loading from "../UI/Loading";
-import classes from "./specificpost.module.css";
 
 function Specificpost() {
   const [isData, setIsData] = useState("");
@@ -57,7 +56,7 @@ function Specificpost() {
   }
 
   return (
-    <div className={classes.div1}>
+    <div>
       {isData.length === 0 && !isLoading ? (
         <p
           style={{

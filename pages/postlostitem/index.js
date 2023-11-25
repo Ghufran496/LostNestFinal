@@ -3,7 +3,7 @@ import classes from "./PostItem.module.css";
 import { getSession } from "next-auth/client";
 import Head from "next/head";
 import PostNewItem from "../../components/postcomp/PostNewItem";
-
+//import Loadings from "../../components/notificationOverlay/Loadings";
 function PostItem() {
   return (
     <Fragment>
@@ -18,6 +18,7 @@ function PostItem() {
       <div className={classes.center}>
         <PostNewItem />
       </div>
+      {/* <Loadings /> */}
     </Fragment>
   );
 }

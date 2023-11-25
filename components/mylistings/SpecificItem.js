@@ -43,14 +43,13 @@ function Specificitem(props) {
             <i>Item Name:</i> {Title}
           </h2>
         </div>
-
-        <div className={classes.anchordiv}>
-          <Link href={detailLink}>
-            <a>
-              <Button content="Check Response" />
-            </a>
-          </Link>
-        </div>
+      </div>
+      <div className={classes.anchordiv}>
+        <Link href={detailLink}>
+          <a>
+            <Button content="Check Response" />
+          </a>
+        </Link>
       </div>
     </li>
   );
