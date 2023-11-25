@@ -10,6 +10,8 @@ class MyDocument extends Document {
           <NextScript />
           <div id="Questions"></div>
           <div id="Answers"></div>
+          <div id="Notification"></div>
+          <div id="Loading"></div>
         </body>
       </Html>
     );

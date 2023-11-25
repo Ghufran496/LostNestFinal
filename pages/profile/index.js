@@ -12,19 +12,7 @@ function ProfilePage() {
         <meta name="description" content="Your Profile content" />
         <link rel="icon" href="/images/logos.png" />
       </Head>
-      <div
-        style={{
-          fontSize: "2rem",
-          color: "#311465",
-          textAlign: "center",
-          textTransform: "uppercase",
-          fontWeight: "bolder",
 
-          marginBottom: "2rem",
-        }}
-      >
-        Profile
-      </div>
       <ProfileFront />
     </Fragment>
   );

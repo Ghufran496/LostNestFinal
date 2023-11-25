@@ -27,7 +27,7 @@ function EventLogistics(props) {
               <TodayOutline color={"#00000"} beat height="25px" width="25px" />
             </span>
 
-            <time style={{ fontSize: "2rem" }}>
+            <time>
               <span className={classes.timer}> {Date}</span>
             </time>
           </LogisticsItem>
@@ -35,13 +35,13 @@ function EventLogistics(props) {
             <span className={classes.spaner}>
               <MenuOutline color={"#00000"} beat height="25px" width="25px" />
             </span>
-            <div style={{ fontSize: "2rem" }}>{Type}</div>
+            <div>{Type}</div>
           </LogisticsItem>
           <LogisticsItem>
             <span className={classes.spaner}>
               <GridOutline color={"#00000"} beat height="25px" width="25px" />
             </span>
-            <div style={{ fontSize: "2rem" }}>{Category}</div>
+            <div>{Category}</div>
           </LogisticsItem>
         </ul>
       </section>

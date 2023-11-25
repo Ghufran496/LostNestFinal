@@ -7,28 +7,29 @@
   width: 80%;
   margin: -3rem auto;
   color: #311465;
-  /* display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-direction: column;
-  align-items: center; */
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .image {
-  width: 10rem;
-  height: 10rem;
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid white;
+  transition: transform 0.3s ease-in-out;
 }
 
 .image img {
-  width: 10rem;
-  height: 10rem;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+.image:hover {
+  transform: scale(1.2);
 }
 
 .list {
@@ -55,75 +56,23 @@
   color: #18e0d0;
 }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-  .logistics {
-    display: flex;
-    padding: 2rem;
-    margin: -5rem auto;
-    gap: 2rem;
-  }
-  .list {
-    align-items: flex-start;
-  }
-  .image {
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .image img {
-    width: 10rem;
-    height: 10rem;
-  }
-  .timer {
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
-  }
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   .logistics {
     padding: 2rem;
     margin: -5rem auto;
-    gap: 2rem;
-    flex-direction: row;
-    align-items: stretch;
   }
 
   .image {
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .image img {
-    width: 15rem;
-    height: 15rem;
-  }
-
-  .list {
-    align-items: flex-start;
+    max-width: 15rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .logistics {
-    padding: 2rem;
-    margin: -5rem auto;
     gap: 3rem;
-    flex-direction: row;
-    align-items: stretch;
   }
 
   .image {
-    width: 20rem;
-    height: 20rem;
-  }
-
-  .image img {
-    width: 20rem;
-    height: 20rem;
-  }
-
-  .list {
-    align-items: flex-start;
+    max-width: 20rem;
   }
 }

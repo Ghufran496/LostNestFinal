@@ -82,7 +82,7 @@ const DetailForm = (props) => {
           required
         ></textarea>
 
-        <div>
+        <div className={classes.twobtn}>
           <button className={classes.button89} type="submit" role="button">
             Submit
           </button>
