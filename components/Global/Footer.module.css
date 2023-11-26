@@ -22,16 +22,21 @@
   align-items: center;
   margin: 10px 0;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.socialiconitem,
-.menuitem {
+.menu .menuitem {
   list-style: none;
+  border-radius: 2rem;
+  border: 2px solid white;
+  transition: border-color 0.3s ease;
 }
-
+.menu .menuitem:hover {
+  border-color: #38015c;
+}
 .socialiconlink {
   font-size: 2rem;
-  color: #fff;
+
   margin: 0 10px;
   display: inline-block;
   transition: 0.5s;
@@ -42,16 +47,17 @@
 
 .menulink {
   font-size: 2.5rem;
-  color: white;
+
   font-weight: bolder;
   margin: 0 10px;
-  /* display: inline-block; */
+
   transition: 0.5s;
   text-decoration: none;
   opacity: 0.75;
 }
 
 .menulink:hover {
+  color: #fff;
   opacity: 1;
 }
 
@@ -99,8 +105,6 @@
   bottom: 20px;
   animation: animate 3s linear infinite;
 }
-
-/*--------------------images------------------*/
 
 .footerbg {
   position: absolute;
