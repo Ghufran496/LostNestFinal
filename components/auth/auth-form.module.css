@@ -88,7 +88,7 @@
   height: 450px;
   position: relative;
   border-radius: 15px; /* Reduced border-radius for a modern look */
-  background: rgba(71, 69, 69, 0.8); /* Increased opacity for better contrast */
+  background: #474545cc; /* Increased opacity for better contrast */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 
   /* Adding transition for a smooth hover effect */

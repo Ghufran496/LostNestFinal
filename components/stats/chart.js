@@ -1,19 +1,23 @@
 import React, { PureComponent } from "react";
 
 import { PieChart, Pie, Legend, Tooltip } from "recharts";
-const data01 = [
-  { name: "Total Posted Items", value: 10 },
-  { name: "Lost Posted Items", value: 3 },
-  { name: "Found Posted Items", value: 7 },
-];
 
-// const data02 = [
-//   { name: "Total Posted Items", value: 10 },
-//   { name: "Lost Posted Items", value: 3 },
-//   { name: "Found Posted Items", value: 7 },
-// ];
+export default function Example(props) {
+  const data01 = [
+    {
+      name: "Total Posted Items",
+      value: props.postscount.totalPosts ? props.postscount.totalPosts : 10,
+    },
+    {
+      name: "Lost Posted Items",
+      value: props.postscount.lostPosts ? props.postscount.lostPosts : 7,
+    },
+    {
+      name: "Found Posted Items",
+      value: props.postscount.foundPosts ? props.postscount.foundPosts : 3,
+    },
+  ];
 
-export default function Example() {
   return (
     <PieChart width={400} height={400}>
       <Pie
