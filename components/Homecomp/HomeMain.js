@@ -61,8 +61,8 @@ const HomeMain = () => {
                 src="/images/login.png"
                 style={{ width: "200px", height: "130px" }}
                 alt="lost and found list image"
-                width={200}
-                height={200}
+                width={150}
+                height={150}
               />
               <h4 className={classes.head}>List Lost/Found Item</h4>
               <p className={classes.para}>
@@ -74,8 +74,8 @@ const HomeMain = () => {
                 src="/images/notification.png"
                 style={{ width: "200px", height: "130px" }}
                 alt="get Notified Image"
-                width={170}
-                height={170}
+                width={150}
+                height={150}
               />
               <h4 className={classes.head}>Get Notified</h4>
               <p className={classes.para}>

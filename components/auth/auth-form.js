@@ -135,11 +135,13 @@ function AuthForm() {
                   type="email"
                   placeholder="email-id"
                   ref={loginEmailInputRef}
+                  required
                 />
                 <input
                   type="password"
                   placeholder="password"
                   ref={loginPasswordInputRef}
+                  required
                 />
 
                 <Button
@@ -167,16 +169,19 @@ function AuthForm() {
                   type="text"
                   placeholder="user name"
                   ref={registerNameInputRef}
+                  required
                 />
                 <input
                   type="email"
                   placeholder="email-id"
                   ref={registerEmailInputRef}
+                  required
                 />
                 <input
                   type="password"
                   placeholder="password"
                   ref={registerPasswordInputRef}
+                  required
                 />
 
                 <Button
