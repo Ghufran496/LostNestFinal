@@ -1,7 +1,7 @@
 .totalcontactform {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 11rem 8rem;
+  margin: 12.5rem 8rem;
 }
 
 .contacttitle {

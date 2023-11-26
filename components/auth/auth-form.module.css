@@ -80,22 +80,24 @@
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
-  margin-bottom: 10rem;
+  margin-bottom: 20rem;
 }
 
 .formbox {
   width: 300px;
-
   height: 450px;
-
   position: relative;
+  border-radius: 15px; /* Reduced border-radius for a modern look */
+  background: rgba(71, 69, 69, 0.8); /* Increased opacity for better contrast */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 
-  /* top: 50px;
+  /* Adding transition for a smooth hover effect */
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
 
-  left: 120px; */
-  border-radius: 100px;
-
-  background: rgba(0, 0, 0, 0.6);
+.formbox:hover {
+  background-color: rgba(71, 69, 69, 0.9); /* Darker background on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
 }
 
 .mainheading {
