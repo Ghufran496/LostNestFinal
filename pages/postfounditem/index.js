@@ -5,7 +5,8 @@ import { getSession } from "next-auth/client";
 import { Fragment } from "react";
 import FoundNewItem from "../../components/postcomp/FoundNewItem";
 
-import Head from "next/head";
+//import Head from "next/head";
+import Head from "next/script";
 function PostLostItem() {
   return (
     <Fragment>

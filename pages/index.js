@@ -1,8 +1,8 @@
 import HomeMain from "../components/Homecomp/HomeMain";
 import { Fragment } from "react";
-import Head from "next/head";
+//import Head from "next/head";
 import Footer from "../components/Global/Footer";
-
+import Head from "next/script";
 function HomePage() {
   return (
     <Fragment>

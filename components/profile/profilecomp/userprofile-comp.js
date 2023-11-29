@@ -29,7 +29,7 @@ function PersonalProfile(props) {
               marginTop: "1rem",
             }}
           >
-            <Link href={profileid}>
+            <Link href={profileid} legacyBehavior>
               <a>
                 <div className={classes.new}>
                   <p style={{ fontSize: "15px" }}>Change Password</p>

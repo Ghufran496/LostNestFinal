@@ -1,7 +1,8 @@
 import { getSession } from "next-auth/client";
 //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
 import { Fragment } from "react";
-import Head from "next/head";
+import Head from "next/script";
+//import Head from "next/head";
 import ProfileFront from "../../components/profile/profile-front";
 
 function ProfilePage() {

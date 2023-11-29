@@ -45,7 +45,7 @@ function Specificitem(props) {
         </div>
       </div>
       <div className={classes.anchordiv}>
-        <Link href={detailLink}>
+        <Link href={detailLink} legacyBehavior>
           <a>
             <Button content="Check Response" />
           </a>

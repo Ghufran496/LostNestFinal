@@ -6,7 +6,8 @@ import EventLogistics from "../../components/feed/FeedDetails/event-logistics";
 import EventContent from "../../components/feed/FeedDetails/event-content";
 import { useState, useEffect } from "react";
 import { Fragment } from "react";
-import Head from "next/head";
+import Head from "next/script";
+//import Head from "next/head";
 import Answer from "../../components/answers/answer";
 import { getSession } from "next-auth/client";
 

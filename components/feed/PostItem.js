@@ -99,7 +99,7 @@ function PostItem(props) {
           alignItems: "center",
         }}
       >
-        <Link href={detailLink}>
+        <Link href={detailLink} legacyBehavior>
           <a>
             <Button content="View Details" />
           </a>

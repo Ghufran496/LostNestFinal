@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/client";
+//import { useSession, signOut } from "next-auth/client/_utils";
 
 import classes from "./main-navigation.module.css";
 import Button from "../UI/Button";
@@ -14,7 +15,7 @@ function MainNavigation() {
   return (
     <header className={classes.header}>
       <div className={classes.navi}>
-        <Link href="/" className={classes.imgdiv}>
+        {/* <Link href="/" className={classes.imgdiv} legacyBehavior>
           <a>
             <div className={classes.new}>
               <img
@@ -25,6 +26,18 @@ function MainNavigation() {
               <h5>LostNest</h5>
             </div>
           </a>
+        </Link> */}
+        <Link href="/" className={classes.imgdiv} legacyBehavior>
+          
+            <div className={classes.new}>
+              <img
+                src="/images/logos.png"
+                alt="logoimg"
+                className={classes.imagest}
+              ></img>
+              <h5>LostNest</h5>
+            </div>
+          
         </Link>
 
         <nav className={classes.mainnav}>
@@ -36,11 +49,12 @@ function MainNavigation() {
             )}
             {!session && !loading && (
               <li>
-                <Link href="/auth">
+                <Link href="/auth" legacyBehavior>
                   <a>
                     <Button content="Login"></Button>
                   </a>
                 </Link>
+{/* <button>Login</button> */}
               </li>
             )}
 
