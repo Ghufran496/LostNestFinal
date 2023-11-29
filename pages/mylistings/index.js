@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import Specificpost from "../../components/mylistings/Specificpost";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import classes from "./indexmain.module.css";
 
 //http://localhost:3000/mylistings/654bc2921efc6c1070461e13

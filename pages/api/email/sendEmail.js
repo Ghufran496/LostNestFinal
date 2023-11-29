@@ -5,7 +5,7 @@
 const nodemailer = require("nodemailer");
 //https://mailtrap.io/inboxes/2499902/messages/3867662540
 import { fetchallemails } from "../../../lib/db";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -14,7 +14,9 @@ export default async function handler(req, res) {
 
   const { subject, message } = req.body;
   const session = await getSession({ req: req });
-
+ if (!session) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
   const emailsender = session.user.email;
 
   if (!subject || !message) {

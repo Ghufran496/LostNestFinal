@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import classes from "./PostItem.module.css";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 //import Head from "next/head";
 import Head from "next/script";
 import PostNewItem from "../../components/postcomp/PostNewItem";

@@ -9,7 +9,7 @@ import { Fragment } from "react";
 import Head from "next/script";
 //import Head from "next/head";
 import Answer from "../../components/answers/answer";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 
 import { getPostDataById } from "../../lib/db";
 

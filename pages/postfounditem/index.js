@@ -1,7 +1,7 @@
 import React from "react";
 
 import classes from "./PostItem.module.css";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import { Fragment } from "react";
 import FoundNewItem from "../../components/postcomp/FoundNewItem";
 

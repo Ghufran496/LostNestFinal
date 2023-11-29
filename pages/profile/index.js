@@ -1,4 +1,4 @@
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 //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
 import { Fragment } from "react";
 import Head from "next/script";
