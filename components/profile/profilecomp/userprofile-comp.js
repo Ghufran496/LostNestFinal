@@ -24,7 +24,7 @@ function PersonalProfile(props) {
         <div className={classes.profilebio}>
           <p>Email : {props.email}</p>
 
-          <div
+          {/* <div
             style={{
               marginTop: "1rem",
             }}
@@ -42,7 +42,7 @@ function PersonalProfile(props) {
                 </div>
               </a>
             </Link>
-          </div>
+          </div> */}
           <p
             style={{
               textDecoration: "underline",

@@ -15,7 +15,7 @@ async function handler(req, res) {
     }
 
     const userEmail = session.user.email;
-
+console.log(user);
     const usersCollection = client.db().collection("users");
     const user = await usersCollection.findOne(
       { email: userEmail },
