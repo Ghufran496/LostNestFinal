@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Head from "next/head";
+//import Head from "next/head";
+import Head from "next/script";
 import { Fragment } from "react";
 import EventSummary from "../../components/feed/FeedDetails/event-summary";
 import EventLogistics from "../../components/feed/FeedDetails/event-logistics";

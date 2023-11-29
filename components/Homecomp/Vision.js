@@ -1,7 +1,5 @@
 import React from "react";
-// import developer from "@/public/images/developer_outline I.svg";
-//mport developer from "../images/logo.png";
-//import developer from "../images/developer.svg";
+
 import classes from "./Vision.module.css";
 import Image from "next/image";
 const Vision = () => {

@@ -14,11 +14,12 @@ const HomeMain = () => {
           <h1 id="title-h">Lost and Found</h1>
           <p>Lost it. List it. Find it.</p>
 
-          <Link href="#section3">
+          <Link href="#section3" legacyBehavior>
             <a>
               <Button content="Get Started" />
             </a>
           </Link>
+          {/* <button>Get Started</button> */}
         </div>
 
         <div className={classes.part2}>
@@ -28,6 +29,7 @@ const HomeMain = () => {
               width={400}
               height={250}
               alt="loading"
+              priority
             ></Image>
           </div>
         </div>
@@ -50,11 +52,12 @@ const HomeMain = () => {
               <p className={classes.para}>
                 Initially, you have to create an account to get started.
               </p>
-              <Link href="/auth">
+              <Link href="/auth" legacyBehavior>
                 <a>
                   <Button content="Sign Up" />
                 </a>
               </Link>
+              {/* <button>Sign UP</button> */}
             </div>
             <div className={classes.info}>
               <Image
