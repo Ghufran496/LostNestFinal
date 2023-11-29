@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import classes from "./Specificitem.module.css";
+import classes from "./SpecificItem.module.css";
+
 import Button from "../UI/Button";
 import Link from "next/link";
 
