@@ -28,7 +28,7 @@ async function handler(req, res) {
 
   if (!user) {
     res.status(404).json({ message: "User not found." });
-    client.close();
+    //client.close();
     return;
   }
 
@@ -38,7 +38,7 @@ async function handler(req, res) {
 
   if (!passwordsAreEqual) {
     res.status(403).json({ message: "Invalid password." });
-    client.close();
+   // client.close();
     return;
   }
 
@@ -49,7 +49,7 @@ async function handler(req, res) {
     { $set: { password: hashedPassword } }
   );
 
-  client.close();
+  //client.close();
   res.status(200).json({ message: "Password updated!" });
 }
 

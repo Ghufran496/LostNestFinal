@@ -62,12 +62,14 @@ function specificid(props) {
     </Fragment>
   );
 }
+
 export async function getServerSideProps(context) {
   const { params } = context;
   const { specificid } = params;
 
   const postData = await getPostDataById(specificid);
   const session = await getSession({ req: context.req });
+
   if (!session) {
     return {
       redirect: {
