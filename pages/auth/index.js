@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Loading from "../../components/UI/Loading";
 import { Fragment } from "react";
 import AuthForm from "../../components/auth/auth-form";
-//import Head from "next/head";
+
 import Head from "next/script";
 function AuthPage() {
   const [isLoading, setIsLoading] = useState(true);

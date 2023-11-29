@@ -1,7 +1,7 @@
 import React from "react";
 import { Fragment } from "react";
 import AllResponses from "../../components/MyResponse/AllResponses";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 
 const MyResponses = () => {
   return (

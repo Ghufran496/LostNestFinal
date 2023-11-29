@@ -1,5 +1,6 @@
 import { connectToDatabase, getAllPosts } from "../../../lib/db";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
+
 
 async function handler(req, res) {
   if (req.method === "POST") {

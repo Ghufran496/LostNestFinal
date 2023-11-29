@@ -8,7 +8,7 @@ import EventContent from "../../components/feed/FeedDetails/event-content";
 import QuestionForm from "../../components/overlayForm/QuestionForm";
 import classes from "./itemid.module.css";
 import { getPostDataById } from "../../lib/db";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import Button from "../../components/UI/Button";
 
 import Loading from "../../components/UI/Loading";

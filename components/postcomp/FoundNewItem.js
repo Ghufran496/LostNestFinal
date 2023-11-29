@@ -2,13 +2,21 @@ import classes from "./FoundNewItem.module.css";
 
 import React, { Fragment } from "react";
 import Button from "../UI/Button";
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
+import { getSession } from "next-auth/react";
 
 import ErrorComp from "../UI/ErrorComp";
 import Noti from "../notificationOverlay/noti";
 import Loadings from "../notificationOverlay/Loadings";
 
-function FoundNewItem() {
+
+ function FoundNewItem() {
+
+
+  // const session = await getSession({ req: context.req });
+  // console.log(session.user.email)
+
+
   const [isLoading, setIsLoading] = useState(false);
   const [isImage, setIsImage] = useState("");
   const [isError, setIsError] = useState(false);

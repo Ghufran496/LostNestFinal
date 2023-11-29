@@ -1,5 +1,5 @@
 import React from "react";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import AllItems from "../../components/feed/AllItems";
 //import { getAllEvents } from "../../components/helpers/api-util";
 import { Fragment } from "react";
