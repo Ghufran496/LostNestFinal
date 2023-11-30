@@ -1,11 +1,17 @@
-//https://www.youtube.com/watch?v=-qQjyxbla-k
-//--------https://www.youtube.com/watch?v=t2LvPXHLrek
-//https://www.youtube.com/watch?v=t2LvPXHLrek&t=1s
+
+// //https://www.youtube.com/watch?v=-qQjyxbla-k
+// //--------https://www.youtube.com/watch?v=t2LvPXHLrek
+// //https://www.youtube.com/watch?v=t2LvPXHLrek&t=1s
+
+// //https://mailtrap.io/inboxes/2499902/messages/3867662540
+
+
 
 const nodemailer = require("nodemailer");
-//https://mailtrap.io/inboxes/2499902/messages/3867662540
+import { getServerSession } from "next-auth/next"
 import { fetchallemails } from "../../../lib/db";
-import { getSession } from "next-auth/react";
+
+import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -13,20 +19,23 @@ export default async function handler(req, res) {
   }
 
   const { subject, message } = req.body;
-  const session = await getSession({ req: req });
+   
+  const session = await getServerSession(req, res, authOptions);
  if (!session) {
     return res.status(401).json({ error: "Unauthorized" });
   }
+  
   const emailsender = session.user.email;
 
   if (!subject || !message) {
     return res.status(400).json({ error: "Missing required parameters" });
   }
 
+
   const transporter = nodemailer.createTransport({
-    port: process.env.smtp_port,
+    port: 587,
     secure: false,
-    host: 587,
+    host: process.env.smtp_host,
     auth: {
       user: process.env.smtp_user,
       pass: process.env.smtp_pass,
@@ -50,3 +59,9 @@ export default async function handler(req, res) {
     res.status(500).json({ error: "Internal Server Error" });
   }
 }
+
+
+
+
+
+
