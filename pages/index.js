@@ -16,6 +16,7 @@ function HomePage() {
       </Head>
       <HomeMain />
       <Footer></Footer>
+      
     </Fragment>
   );
 }
