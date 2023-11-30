@@ -12,7 +12,7 @@ export default NextAuth({
     // Use JSON Web Tokens (JWTs) for secure sessions
     strategy: "jwt",
     // Set the JWT secret key
-  
+    secret: process.env.NEXTAUTH_SECRET,
   },
 
   // Configure authentication providers
