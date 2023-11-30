@@ -4,6 +4,7 @@ import { Fragment } from "react";
 
 import ChartComp from "../../components/stats/ChartComp";
 function statistics() {
+  
   return (
     <Fragment>
       <ChartComp />

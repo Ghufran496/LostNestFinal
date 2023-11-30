@@ -1,5 +1,7 @@
-import { getSession } from "next-auth/react";
-//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
+//import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth/next";
+
+import { authOptions } from "../api/auth/[...nextauth]";
 import { Fragment } from "react";
 import Head from "next/script";
 //import Head from "next/head";
@@ -21,8 +23,8 @@ function ProfilePage() {
 }
 
 export async function getServerSideProps(context) {
-  const session = await getSession({ req: context.req });
-
+ // const session = await getSession({ req: context.req });
+ const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {
@@ -34,7 +36,7 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      session,
+      
     },
   };
 }

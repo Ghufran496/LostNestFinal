@@ -9,8 +9,10 @@ import { Fragment } from "react";
 import Head from "next/script";
 //import Head from "next/head";
 import Answer from "../../components/answers/answer";
-import { getSession } from "next-auth/react";
+//import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth/next";
 
+import { authOptions } from "../api/auth/[...nextauth]";
 import { getPostDataById } from "../../lib/db";
 
 function specificid(props) {
@@ -68,8 +70,8 @@ export async function getServerSideProps(context) {
   const { specificid } = params;
 
   const postData = await getPostDataById(specificid);
-  const session = await getSession({ req: context.req });
-
+  //const session = await getSession({ req: context.req });
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {
