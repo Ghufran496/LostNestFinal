@@ -1,5 +1,7 @@
 import { connectToDatabase } from "../../../lib/db";
-import { getSession } from "next-auth/react";
+//import { getSession } from "next-auth/react";
+import { authOptions } from "../auth/[...nextauth]";
+import { getServerSession } from "next-auth/next";
 async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
@@ -43,7 +45,8 @@ async function handler(req, res) {
       .status(201)
       .json({ message: "Contact Information stored successfully" });
   } else {
-    const session = await getSession({ req: req });
+   // const session = await getSession({ req: req });
+   const session = await getServerSession(req, res, authOptions);
     if (!session) {
       res.status(401).json({ message: "Not authenticated!" });
       return;

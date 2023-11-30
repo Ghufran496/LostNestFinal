@@ -8,7 +8,7 @@
 
 
 const nodemailer = require("nodemailer");
-import { getServerSession } from "next-auth/next"
+import { getServerSession } from "next-auth/next";
 import { fetchallemails } from "../../../lib/db";
 
 import { authOptions } from "../auth/[...nextauth]";
