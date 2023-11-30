@@ -6,14 +6,23 @@ const Vision = () => {
   return (
     <section className={classes.sec2}>
       <div className={classes.firstDiv}>
+  <img
+    className={classes.developerimg}
+    src="/images/imgres.png"
+   
+    alt="loading"
+  />
+</div>
+
+      {/* <div className={classes.firstDiv}>
         <Image
           className={classes.developerimg}
           src="/images/lost.png"
-          width={1000}
-          height={500}
+          width={300}
+          height={150}
           alt="loading"
         ></Image>
-      </div>
+      </div> */}
       <div className={classes.inspiration}>
         <h6 className={classes.sectionheading}>Our Project Inspiration</h6>
         <p>

@@ -26,8 +26,8 @@ const HomeMain = () => {
           <div className="image">
             <Image
               src="/images/developer.png"
-              width={400}
-              height={250}
+              width={250}
+              height={150}
               alt="loading"
               priority
             ></Image>
@@ -57,7 +57,7 @@ const HomeMain = () => {
                   <Button content="Sign Up" />
                 </a>
               </Link>
-              {/* <button>Sign UP</button> */}
+             
             </div>
             <div className={classes.info}>
               <Image
