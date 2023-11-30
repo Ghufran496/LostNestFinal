@@ -15,6 +15,7 @@ function ProfilePage() {
       </Head>
 
       <ProfileFront />
+      
     </Fragment>
   );
 }

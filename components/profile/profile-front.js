@@ -40,11 +40,13 @@ function ProfileFront() {
 
   return (
     <Fragment>
+      
       <PersonalProfile
         name={isData.name}
         id={isData._id}
         email={isData.email}
       />
+      
     </Fragment>
   );
 }
