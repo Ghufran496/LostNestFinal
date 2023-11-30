@@ -78,12 +78,13 @@ function PostNewItem() {
     });
     setIsSendEmail(false);
 
+    
+    const data = await response.json();
     if (!response.ok) {
       setIsErrorData(data.message);
       setIsLoading(false);
       setIsError(true);
     }
-    const data = await response.json();
 
     return data;
   }
