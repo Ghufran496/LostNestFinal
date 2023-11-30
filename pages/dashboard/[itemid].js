@@ -54,6 +54,7 @@ function ItemDetailPage(props) {
       <Head>
         <title>{event.Title}</title>
         <meta name="description" content={event.Description} />
+        <link rel="icon" href="/images/logos.png" />
       </Head>
       <EventSummary Title={event.Title} />
 
