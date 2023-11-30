@@ -1,1 +1,1 @@
-{"version":1,"functions":{"/api/auth/[...nextauth]":{},"/dashboard/[itemid]":{},"/mylistings/[specificid]":{},"/dashboard":{},"/mylistings":{},"/postfounditem":{},"/responses":{},"/profile":{},"/profile/[profileid]":{},"/postlostitem":{}}}
+{"version":1,"functions":{"/api/auth/[...nextauth]":{},"/dashboard":{},"/dashboard/[itemid]":{},"/mylistings/[specificid]":{},"/profile/[profileid]":{},"/mylistings":{},"/postlostitem":{},"/postfounditem":{},"/profile":{},"/responses":{}}}

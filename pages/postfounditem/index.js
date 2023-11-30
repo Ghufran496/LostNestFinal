@@ -1,7 +1,10 @@
 import React from "react";
 
 import classes from "./PostItem.module.css";
-import { getSession } from "next-auth/react";
+//import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth/next";
+
+import { authOptions } from "../api/auth/[...nextauth]";
 import { Fragment } from "react";
 import FoundNewItem from "../../components/postcomp/FoundNewItem";
 
@@ -25,8 +28,8 @@ function PostLostItem() {
   );
 }
 export async function getServerSideProps(context) {
-  const session = await getSession({ req: context.req });
-
+  //const session = await getSession({ req: context.req });
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {
@@ -37,7 +40,7 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { session },
+    props: {  },
   };
 }
 export default PostLostItem;
