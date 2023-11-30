@@ -1,5 +1,7 @@
 import React from "react";
-import { getSession } from "next-auth/react";
+//import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../api/auth/[...nextauth]";
 import AllItems from "../../components/feed/AllItems";
 //import { getAllEvents } from "../../components/helpers/api-util";
 import { Fragment } from "react";
@@ -52,8 +54,8 @@ const dashboard = (props) => {
   );
 };
 export async function getServerSideProps(context) {
-  const session = await getSession({ req: context.req });
-
+  //const session = await getSession({ req: context.req });
+  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
       redirect: {
@@ -62,9 +64,10 @@ export async function getServerSideProps(context) {
       },
     };
   }
+  // console.log(session.user.email);
 
   return {
-    props: { session },
+    props: {  },
   };
 }
 export default dashboard;
