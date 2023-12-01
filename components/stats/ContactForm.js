@@ -71,7 +71,7 @@ function ContactForm() {
         <div className={classes.contactform}>
           <form onSubmit={submitHandler}>
             <div>
-              <label for="field1">Name :</label>
+              <label htmlFor="field1">Name :</label>
               <input
                 type="text"
                 name="field1"
@@ -79,7 +79,7 @@ function ContactForm() {
                 ref={contactNameInputRef}
                 required
               ></input>
-              <label for="field2">Email address :</label>
+              <label htmlFor="field2">Email address :</label>
               <input
                 type="email"
                 name="field2"
@@ -88,7 +88,7 @@ function ContactForm() {
                 required
               />
 
-              <label for="description">Message :</label>
+              <label htmlFor="description">Message :</label>
               <textarea
                 type="text"
                 name="description"

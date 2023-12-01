@@ -23,7 +23,7 @@ function ErrorComp(props) {
             Sorry, we can't find that page. You'll find lots to explore on the
             home page.
           </p>
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a>
               <Button content="Back to Homepage"></Button>
             </a>
