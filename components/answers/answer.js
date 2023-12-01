@@ -6,7 +6,7 @@ import Button from "../UI/Button";
 //http://localhost:3000/mylistings/654bc2921efc6c1070461e13
 function Answer(props) {
   const { postid } = props;
-  console.log(postid);
+  //console.log(postid);
   const [showResponse, setShowResponse] = useState(false);
   const [showLoadingContent, setLoadingContent] = useState(false);
   const [response, setresponse] = useState([]);
