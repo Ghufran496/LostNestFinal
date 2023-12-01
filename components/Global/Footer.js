@@ -15,15 +15,6 @@ function Footer() {
         />
         <link rel="icon" href="/images/logos.png" />
         
-        {/* <script
-          noModule
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-        ></script>
-        <script
-        noModule
-          type="module"
-          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-        ></script> */}
       </Head>
       <footer className={classes.footer}>
         <div className={classes.waves}>
@@ -32,28 +23,8 @@ function Footer() {
           <div className={classes.wave} id="wave3"></div>
           <div className={classes.wave} id="wave4"></div>
         </div>
-        {/* <ul className={classes.socialicon}>
-          <li className={classes.socialiconitem}>
-            <a className={classes.socialiconlink} href="#">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a>
-          </li>
-          <li className={classes.socialiconitem}>
-            <a className={classes.socialiconlink} href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-          <li className={classes.socialiconitem}>
-            <a className={classes.socialiconlink} href="#">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-          <li className={classes.socialiconitem}>
-            <a className={classes.socialiconlink} href="#">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-        </ul> */}
+        
+        <div className={classes.center}>
         <ul className={classes.menu}>
         <li className={classes.menuitem}>
   <Link href="/" legacyBehavior>
@@ -69,39 +40,14 @@ function Footer() {
   <Link href="/stats" legacyBehavior>
     <a className={classes.menulink}>Stats</a>
   </Link>
-</li>
-
-          {/* <li className={classes.menuitem}>
-            <a className={classes.menulink}>
-              <Link href="/">Home</Link>
-            </a>
-          </li>
-          <li className={classes.menuitem}>
-            <a className={classes.menulink}>
-              <Link href="/auth">Login</Link>
-            </a>
-          </li>
-          <li className={classes.menuitem}>
-            <a className={classes.menulink}>
-              <Link href="/stats">Stats</Link>
-            </a>
-          </li> */}
-          {/* <li className={classes.menuitem}>
-            <a className={classes.menulink} href="#">
-              Team
-            </a>
-          </li>
-          <li className={classes.menuitem}>
-            <a className={classes.menulink} href="#">
-              Contact
-            </a>
-          </li> */}
+</li>  
         </ul>
-        {/* <div className={classes.footerbg}>
+        <p style={{color:"black", fontWeight:"bold", textTransform:"capitalize",textAlign:"center"}}>Ghufran Ullah(20-SE-34) and Noman Shafique(20-SE-38) proudly present their final year project under the supervision of Sir Mubbashir Ayub.</p>
+        </div>
+        <div className={classes.footerbg}>
           <div className={classes.footerbgone}></div>
           <div className={classes.footerbgtwo}></div>
-        </div> */}
-        {/* <p>&copy;2021 Nadine Coelho | All Rights Reserved</p> */}
+        </div>
       </footer>
     </Fragment>
   );

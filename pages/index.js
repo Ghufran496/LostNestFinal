@@ -1,6 +1,6 @@
 import HomeMain from "../components/Homecomp/HomeMain";
 import { Fragment } from "react";
-//import Head from "next/head";
+
 import Footer from "../components/Global/Footer";
 import Head from "next/script";
 function HomePage() {
@@ -20,5 +20,5 @@ function HomePage() {
     </Fragment>
   );
 }
-// "mdb-react-ui-kit": "^6.3.0",
+
 export default HomePage;

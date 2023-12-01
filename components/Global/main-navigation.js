@@ -94,15 +94,9 @@
 // }
 
 // export default MainNavigation;
-import Link from
- 
-"next/link";
-import { useSession, signOut } from
- 
-"next-auth/react";
-import classes from
- 
-"./main-navigation.module.css";
+import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
+import classes from "./main-navigation.module.css";
 import Button from "../UI/Button";
 
 function MainNavigation() {

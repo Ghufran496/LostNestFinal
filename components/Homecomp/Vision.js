@@ -14,15 +14,7 @@ const Vision = () => {
   />
 </div>
 
-      {/* <div className={classes.firstDiv}>
-        <Image
-          className={classes.developerimg}
-          src="/images/lost.png"
-          width={300}
-          height={150}
-          alt="loading"
-        ></Image>
-      </div> */}
+      
       <div className={classes.inspiration}>
         <h6 className={classes.sectionheading}>Our Project Inspiration</h6>
         <p>

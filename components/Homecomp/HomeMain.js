@@ -19,7 +19,7 @@ const HomeMain = () => {
               <Button content="Get Started" />
             </a>
           </Link>
-          {/* <button>Get Started</button> */}
+          
         </div>
 
         <div className={classes.part2}>
