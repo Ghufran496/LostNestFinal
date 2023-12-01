@@ -7,14 +7,17 @@ export default function Example(props) {
     {
       name: "Total Posted Items",
       value: props.postscount.totalPosts ? props.postscount.totalPosts : 10,
+      fill: "#311465",
     },
     {
       name: "Lost Posted Items",
       value: props.postscount.lostPosts ? props.postscount.lostPosts : 7,
+      fill: "#3586ff",
     },
     {
       name: "Found Posted Items",
       value: props.postscount.foundPosts ? props.postscount.foundPosts : 3,
+      fill: "#ffa435",
     },
   ];
 
@@ -22,12 +25,12 @@ export default function Example(props) {
     <PieChart width={400} height={400}>
       <Pie
         dataKey="value"
-        isAnimationActive={false}
+        isAnimationActive={true}
         data={data01}
         cx={200}
         cy={200}
-        outerRadius={150}
-        fill="#311465"
+        outerRadius={130}
+       
         label
       />
 
