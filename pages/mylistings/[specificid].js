@@ -6,10 +6,10 @@ import EventLogistics from "../../components/feed/FeedDetails/event-logistics";
 import EventContent from "../../components/feed/FeedDetails/event-content";
 import { useState, useEffect } from "react";
 import { Fragment } from "react";
-import Head from "next/script";
-//import Head from "next/head";
+
+import Head from "next/head";
 import Answer from "../../components/answers/answer";
-//import { getSession } from "next-auth/react";
+
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
@@ -70,7 +70,7 @@ export async function getServerSideProps(context) {
   const { specificid } = params;
 
   const postData = await getPostDataById(specificid);
-  //const session = await getSession({ req: context.req });
+
   const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
@@ -87,21 +87,5 @@ export async function getServerSideProps(context) {
     },
   };
 }
-// export async function getServerSideProps(context) {
-//   const session = await getSession({ req: context.req });
-
-//   if (!session) {
-//     return {
-//       redirect: {
-//         destination: "/auth",
-//         permanent: false,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: { session },
-//   };
-// }
 
 export default specificid;

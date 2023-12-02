@@ -1,12 +1,12 @@
 import React from "react";
-//import { getSession } from "next-auth/react";
+
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../api/auth/[...nextauth]";
 import AllItems from "../../components/feed/AllItems";
-//import { getAllEvents } from "../../components/helpers/api-util";
+
 import { Fragment } from "react";
-//import Head from "next/head";
-import Head from "next/script";
+import Head from "next/head";
+
 
 
 const dashboard = () => {
@@ -54,7 +54,7 @@ const dashboard = () => {
   );
 };
 export async function getServerSideProps(context) {
-  //const session = await getSession({ req: context.req });
+  
   const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {
@@ -64,7 +64,7 @@ export async function getServerSideProps(context) {
       },
     };
   }
-  // console.log(session.user.email);
+ 
 
   return {
     props: {  },

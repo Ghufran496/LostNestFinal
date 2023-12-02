@@ -5,7 +5,7 @@ import Loading from "../../components/UI/Loading";
 import { Fragment } from "react";
 import AuthForm from "../../components/auth/auth-form";
 
-import Head from "next/script";
+import Head from "next/head";
 function AuthPage() {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
@@ -27,7 +27,7 @@ function AuthPage() {
   return (
     <Fragment>
       <Head>
-        <title>Sign In</title>
+        <title>Login/Signup</title>
         <meta
           name="description"
           content="Login/Register in Lost and Found Hub for University Students"
