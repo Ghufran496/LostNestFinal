@@ -1,10 +1,10 @@
-//import { getSession } from "next-auth/react";
+
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 import { Fragment } from "react";
-import Head from "next/script";
-//import Head from "next/head";
+
+import Head from "next/head";
 import ProfileFront from "../../components/profile/profile-front";
 
 function ProfilePage() {
@@ -23,7 +23,7 @@ function ProfilePage() {
 }
 
 export async function getServerSideProps(context) {
- // const session = await getSession({ req: context.req });
+
  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {

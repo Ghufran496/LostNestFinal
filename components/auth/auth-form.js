@@ -11,6 +11,7 @@ import ErrorComp from "../UI/ErrorComp";
 
 
 
+
 function AuthForm() {
   const [toggleForms, setToggleForms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -101,7 +102,7 @@ function AuthForm() {
   }
 
   if (isError) {
-    return <ErrorComp errorData={isErrorData} />;
+    return <ErrorComp errorData={isErrorData} moveTo="AuthPage" />;
   }
 
   return (

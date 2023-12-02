@@ -1,3 +1,4 @@
+//https://www.youtube.com/watch?v=AbUVY16P4Ys
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { verifyPassword } from "../../../lib/auth";
@@ -42,6 +43,9 @@ export const authOptions = {
       
     })
   ],
+  session: {
+    maxAge: 5 * 60, // Set maxAge to 10 seconds
+  },
 }
 export default NextAuth(authOptions);
 

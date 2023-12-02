@@ -1,13 +1,21 @@
 import React from "react";
 import { Fragment } from "react";
 import AllResponses from "../../components/MyResponse/AllResponses";
-//import { getSession } from "next-auth/react";
+import Head from "next/head";
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
 const MyResponses = () => {
   return (
     <Fragment>
+      <Head>
+        <title>Responses</title>
+        <meta
+          name="description"
+          content="All Responses stored here"
+        />
+        <link rel="icon" href="/images/logos.png" />
+      </Head>
       <h6
         style={{
           color: "#2e186a",

@@ -54,7 +54,7 @@ const AllResponses = () => {
       {isData.length === 0 && !isLoading ? (
         <p
           style={{
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             display: "flex",
             marginTop: "1rem",
             justifyContent: "center",

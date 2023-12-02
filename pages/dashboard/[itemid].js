@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-//import Head from "next/head";
-import Head from "next/script";
+import Head from "next/head";
+
 import { Fragment } from "react";
 import EventSummary from "../../components/feed/FeedDetails/event-summary";
 import EventLogistics from "../../components/feed/FeedDetails/event-logistics";
@@ -11,7 +11,7 @@ import { getPostDataById } from "../../lib/db";
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
-//import { getSession } from "next-auth/react";
+
 import Button from "../../components/UI/Button";
 
 import Loading from "../../components/UI/Loading";
@@ -83,7 +83,7 @@ function ItemDetailPage(props) {
 export async function getServerSideProps(context) {
   const postId = context.params.itemid;
   const postData = await getPostDataById(postId);
- // const session = await getSession({ req: context.req });
+
  const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {

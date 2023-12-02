@@ -21,10 +21,10 @@ function Specificpost() {
       .then((response) => response.json())
       .then((data) => {
         if (isMounted) {
-          //console.log(data);
+         
 
           const dataArray = Array.isArray(data) ? data : [data];
-          //console.log(dataArray);
+         
 
           setIsData(dataArray);
 

@@ -20,7 +20,7 @@ function AllItems() {
     fetch("/api/post/postitem")
       .then((response) => response.json())
       .then((data) => {
-        //console.log("data in client" + data);
+       
         if (isMounted) {
           setIsData(data);
           if (data.message) {
@@ -46,7 +46,7 @@ function AllItems() {
   }, []);
 
   if (isError) {
-    return <ErrorComp errorData={isErrorData} />;
+    return <ErrorComp errorData={isErrorData}  />;
   }
 
   return (

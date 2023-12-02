@@ -1,4 +1,4 @@
-//import { hashPassword } from "../../../lib/auth";
+
 import { hashPassword } from "../../../lib/auth";
 import { connectToDatabase } from "../../../lib/db";
 
@@ -41,7 +41,7 @@ async function handler(req, res) {
 
   if (existingUser) {
     res.status(422).json({ message: "User exists already!" });
-    client.close();
+
     return;
   }
 
@@ -54,7 +54,7 @@ async function handler(req, res) {
   });
 
   res.status(201).json({ message: "Created user!" });
-  client.close();
+  
 }
 
 export default handler;
