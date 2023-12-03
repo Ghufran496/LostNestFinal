@@ -23,25 +23,25 @@
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .formContainer {
-    width: 65%;
+    width: auto;
   }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .formContainer {
-    width: 60%;
+    width: auto;
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .formContainer {
-    width: 50%;
+    width: auto;
   }
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
   .formContainer {
-    width: 45%;
+    width: auto;
   }
 }
 
