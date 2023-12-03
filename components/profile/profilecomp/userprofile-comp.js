@@ -48,9 +48,10 @@ function PersonalProfile(props) {
               textDecoration: "underline",
               textTransform: "capitalize",
               fontSize: "13px",
+              marginTop:"2rem"
             }}
           >
-            "You are enough just as you are."
+            "You are enough just as you are." - Meghan Markle
           </p>
         </div>
       </aside>
