@@ -29,8 +29,8 @@ const dashboard = () => {
           padding: "1rem",
         }}
       >
-        <h1 style={{ fontSize: "4rem" }}>Welcome To LostNest</h1>
-        <h3>
+        <h1 style={{ fontSize: "3.2rem"}}>Welcome To LostNest</h1>
+        <h3 style={{textAlign:"center"}}>
           Thank You for being a part of LostNest community and helping each
           other.
         </h3>
@@ -38,7 +38,8 @@ const dashboard = () => {
           style={{
             color: "#2e186a",
             margin: "auto",
-            fontSize: "2.575rem",
+            fontSize: "2.2rem",
+            fontWeight:"500",
             padding: "0.5rem 0",
             borderBottom: "3px solid #2e186a",
             width: "15rem",

@@ -20,7 +20,7 @@ const MyResponses = () => {
         style={{
           color: "#2e186a",
           margin: "auto",
-          fontSize: "2.4rem",
+          fontSize: "2.2rem",
           padding: "0.5rem 0",
           borderBottom: "3px solid #2e186a",
           width: "15rem",
