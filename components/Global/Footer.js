@@ -42,7 +42,7 @@ function Footer() {
   </Link>
 </li>  
         </ul>
-        <p style={{color:"black", fontWeight:"bold", textTransform:"capitalize",textAlign:"center"}}>Ghufran Ullah(20-SE-34) and Noman Shafique(20-SE-38) proudly present their final year project under the supervision of Sir Mubbashir Ayub.</p>
+        <p style={{color:"black", fontWeight:"700", textTransform:"uppercase",textAlign:"center",width:"30rem"}}>Ghufran Ullah(20-SE-34) and Noman Shafique(20-SE-38) proudly present their final year project under the supervision of Sir Mubbashir Ayub.</p>
         </div>
         <div className={classes.footerbg}>
           <div className={classes.footerbgone}></div>
