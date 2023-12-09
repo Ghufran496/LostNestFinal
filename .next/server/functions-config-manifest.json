@@ -1,1 +1,0 @@
-{"version":1,"functions":{"/api/auth/[...nextauth]":{},"/dashboard/[itemid]":{},"/dashboard":{},"/mylistings/[specificid]":{},"/mylistings":{},"/postfounditem":{},"/postlostitem":{},"/profile/[profileid]":{},"/profile":{},"/responses":{}}}

@@ -16,6 +16,8 @@ const MyResponses = () => {
         />
         <link rel="icon" href="/images/logos.png" />
       </Head>
+      <section style={{
+          backgroundColor:"#f4f4f4"}}>
       <h6
         style={{
           color: "#2e186a",
@@ -25,11 +27,13 @@ const MyResponses = () => {
           borderBottom: "3px solid #2e186a",
           width: "15rem",
           textAlign: "center",
+          paddingTop:"3rem"
         }}
       >
         My Responses
       </h6>
       <AllResponses />
+      </section>
     </Fragment>
   );
 };
