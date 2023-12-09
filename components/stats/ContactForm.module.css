@@ -1,7 +1,8 @@
 .totalcontactform {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 12.5rem 8rem;
+  padding: 10rem 8rem;
+  background-color: #f4f4f4;
 }
 
 .contacttitle {
@@ -25,6 +26,9 @@
   text-transform: capitalize;
 }
 
+/* .contactform{
+  background-color: #f4f4f4;
+} */
 .contactform > form > div {
   display: flex;
   flex-direction: column;
@@ -34,6 +38,8 @@
   font-size: 2rem;
   text-transform: capitalize;
   font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .contactform > form > div > input {
@@ -53,7 +59,7 @@
   .totalcontactform {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 11rem 5rem;
+    padding: 11rem 5rem;
   }
   .contacttitle > p {
     text-align: center;
@@ -64,7 +70,7 @@
   .totalcontactform {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 11rem 5rem;
+    padding: 11rem 5rem;
   }
   .contacttitle > p {
     text-align: center;
@@ -75,7 +81,7 @@
   .totalcontactform {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 11rem 5rem;
+    padding: 11rem 5rem;
   }
   .contacttitle > p {
     text-align: center;

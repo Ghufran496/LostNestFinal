@@ -1,3 +1,4 @@
+
 .head6 {
   color: #2e186a;
   margin: auto;
@@ -6,6 +7,7 @@
   border-bottom: 3px solid #2e186a;
   width: 15rem;
   text-align: center;
+  margin-top: 3rem;
 }
 
 /* @media screen and (min-width: 320px) and (max-width: 480px) {

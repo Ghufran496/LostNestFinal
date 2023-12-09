@@ -20,6 +20,8 @@ const dashboard = () => {
         />
         <link rel="icon" href="/images/logos.png" />
       </Head>
+      <section style={{
+          backgroundColor:"#f4f4f4"}}>
       <div
         style={{
           display: "flex",
@@ -27,6 +29,7 @@ const dashboard = () => {
           justifyContent: "center",
           alignItems: "center",
           padding: "1rem",
+          paddingTop:"3rem"
         }}
       >
         <h1 style={{ fontSize: "3.2rem"}}>Welcome To LostNest</h1>
@@ -51,6 +54,7 @@ const dashboard = () => {
       </div>
 
       <AllItems />
+      </section>
     </Fragment>
   );
 };
