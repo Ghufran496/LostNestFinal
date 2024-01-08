@@ -20,8 +20,7 @@ const dashboard = () => {
         />
         <link rel="icon" href="/images/logos.png" />
       </Head>
-      <section style={{
-          backgroundColor:"#f4f4f4"}}>
+      <section >
       <div
         style={{
           display: "flex",

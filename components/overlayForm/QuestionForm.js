@@ -5,13 +5,20 @@ import Form from "./Form";
 
 function QuestionForm(props) {
   return ReactDOM.createPortal(
-    <div className={classes.backer}>
-      <div className={classes.formContainer}>
+
+  
         <Form oncancle={props.onclose} data2={props.data} />
-      </div>
-    </div>,
+     
+    
+      ,
     document.getElementById("Questions")
   );
 }
+//className={classes.formContainer}
 
+{/* <div className={classes.backer}>
+      <div className={classes.formContainer} >
+        <Form oncancle={props.onclose} data2={props.data} />
+      </div>
+    </div> */}
 export default QuestionForm;

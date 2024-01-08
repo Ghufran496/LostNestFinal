@@ -21,8 +21,10 @@ function PostLostItem() {
         />
         <link rel="icon" href="/images/logos.png" />
       </Head>
+      <div className={classes.centermain}>
       <div className={classes.center}>
         <FoundNewItem />
+      </div>
       </div>
     </Fragment>
   );

@@ -75,26 +75,26 @@ const DetailForm = (props) => {
         <textarea
           type="text"
           name="contactInformations"
-          rows="4"
-          cols="40"
+          rows={4}
+          
+          style={{fontSize:"10px",padding:"6px"}}
           placeholder="your Gmail or cell number."
+          className="block w-3/5 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           ref={ResponseData}
           required
         ></textarea>
-
-        <div className={classes.twobtn}>
-          <button className={classes.button89} type="submit" role="button">
-            Submit
-          </button>
-          <button
-            className={classes.button89}
-            type="button"
-            role="button"
-            onClick={props.close}
-          >
-            Close
-          </button>
-        </div>
+<div className="mt-6 flex items-center justify-end gap-x-6">
+        <button type="button" role="button" onClick={props.close} className="text-xl font-semibold leading-6 text-white-900">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          role="button"
+          className="rounded-md bg-indigo-600 px-12 py-4 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Submit
+        </button>
+      </div>
       </form>
     </Fragment>
   );

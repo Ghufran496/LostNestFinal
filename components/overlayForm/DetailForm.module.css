@@ -10,12 +10,7 @@
   text-transform: capitalize;
   font-weight: 400;
 }
-.form textarea {
-  padding: 1rem;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
+
 
 /* CSS */
 .button89 {
