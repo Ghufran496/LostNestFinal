@@ -19,8 +19,11 @@ const MyListings = () => {
         />
         <link rel="icon" href="/images/logos.png" />
       </Head>
-      <h6 className={classes.head6}>My Listings</h6>
+      <section>      
+        <h6 className={classes.head6}>My Listings</h6>
       <Specificpost />
+      </section>
+
     </Fragment>
   );
 };

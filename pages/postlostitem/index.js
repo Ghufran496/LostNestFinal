@@ -1,13 +1,10 @@
 import React, { Fragment } from "react";
 import classes from "./PostItem.module.css";
-//import { getSession } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
-
 import { authOptions } from "../api/auth/[...nextauth]";
 import Head from "next/head";
-//import Head from "next/script";
 import PostNewItem from "../../components/postcomp/PostNewItem";
-//import Loadings from "../../components/notificationOverlay/Loadings";
+
 function PostItem() {
   return (
     <Fragment>
@@ -19,16 +16,18 @@ function PostItem() {
         />
         <link rel="icon" href="/images/logos.png" />
       </Head>
+      <div className={classes.centermain}>
       <div className={classes.center}>
         <PostNewItem />
       </div>
-      {/* <Loadings /> */}
+      </div>
+    
     </Fragment>
   );
 }
 
 export async function getServerSideProps(context) {
-  //const session = await getSession({ req: context.req });
+ 
   const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {

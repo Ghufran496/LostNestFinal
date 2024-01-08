@@ -16,8 +16,7 @@ const MyResponses = () => {
         />
         <link rel="icon" href="/images/logos.png" />
       </Head>
-      <section style={{
-          backgroundColor:"#f4f4f4"}}>
+     
       <h6
         style={{
           color: "#2e186a",
@@ -33,7 +32,7 @@ const MyResponses = () => {
         My Responses
       </h6>
       <AllResponses />
-      </section>
+      
     </Fragment>
   );
 };
