@@ -23,25 +23,31 @@ function EventLogistics(props) {
         </div>
         <ul className={classes.list}>
           <LogisticsItem>
+            <div className={classes.centerdiv}>
             <span className={classes.spaner}>
-              <TodayOutline color={"#00000"} beat height="25px" width="25px" />
+              <TodayOutline color={"#00000"} height="25px" width="25px" />
             </span>
 
             <time>
               <span className={classes.timer}> {Date}</span>
             </time>
+            </div>
           </LogisticsItem>
           <LogisticsItem>
+            <div className={classes.centerdiv}>
             <span className={classes.spaner}>
-              <MenuOutline color={"#00000"} beat height="25px" width="25px" />
+              <MenuOutline color={"#00000"} height="25px" width="25px" />
             </span>
             <div>{Type}</div>
+            </div>
           </LogisticsItem>
           <LogisticsItem>
+            <div className={classes.centerdiv}>
             <span className={classes.spaner}>
-              <GridOutline color={"#00000"} beat height="25px" width="25px" />
+              <GridOutline color={"#00000"} height="25px" width="25px" />
             </span>
             <div>{Category}</div>
+            </div>
           </LogisticsItem>
         </ul>
       </section>

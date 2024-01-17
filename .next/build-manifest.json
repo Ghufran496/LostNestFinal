@@ -27,20 +27,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/dashboard.js"
     ],
-    "/mylistings": [
+    "/postlostitem": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/mylistings.js"
+      "static/chunks/pages/postlostitem.js"
     ],
-    "/mylistings/[specificid]": [
+    "/profile": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/mylistings/[specificid].js"
+      "static/chunks/pages/profile.js"
     ],
-    "/postfounditem": [
+    "/responses": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/postfounditem.js"
+      "static/chunks/pages/responses.js"
     ]
   },
   "ampFirstPages": []

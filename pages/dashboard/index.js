@@ -32,7 +32,7 @@ const dashboard = () => {
         }}
       >
         <h1 style={{ fontSize: "3.2rem"}}>Welcome To LostNest</h1>
-        <h3 style={{textAlign:"center"}}>
+        <h3 style={{textAlign:"center", fontSize:"1.5rem"}}>
           Thank You for being a part of LostNest community and helping each
           other.
         </h3>

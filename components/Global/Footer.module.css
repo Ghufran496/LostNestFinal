@@ -13,7 +13,7 @@
   z-index: 1;
 }
 
-/* #2e186a */
+
 .socialicon,
 .menu {
   position: relative;
@@ -72,8 +72,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
   align-items: center;
-
-
 
 }
 
