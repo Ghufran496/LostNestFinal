@@ -1,7 +1,6 @@
 import React from "react";
 
 import classes from "./PostItem.module.css";
-//import { getSession } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../api/auth/[...nextauth]";
@@ -9,7 +8,7 @@ import { Fragment } from "react";
 import FoundNewItem from "../../components/postcomp/FoundNewItem";
 
 import Head from "next/head";
-//import Head from "next/script";
+
 function PostLostItem() {
   return (
     <Fragment>
@@ -30,7 +29,7 @@ function PostLostItem() {
   );
 }
 export async function getServerSideProps(context) {
-  //const session = await getSession({ req: context.req });
+ 
   const session = await getServerSession(context.req, context.res, authOptions);
   if (!session) {
     return {

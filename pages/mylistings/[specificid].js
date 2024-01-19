@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./specificid.module.css";
 import Loading from "../../components/UI/Loading";
 import EventSummary from "../../components/feed/FeedDetails/event-summary";
 import EventLogistics from "../../components/feed/FeedDetails/event-logistics";

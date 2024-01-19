@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./SpecificItem.module.css";
 
 import Button from "../UI/Button";

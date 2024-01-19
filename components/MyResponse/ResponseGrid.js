@@ -13,8 +13,7 @@ const ResponseGrid = (props) => {
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
         listStyle: "none",
-        // justifyContent: "center",
-        // alignItems: "center",
+        
         padding: "1rem",
         margin: "1.5rem",
         gap: "2rem",

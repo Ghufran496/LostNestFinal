@@ -1,14 +1,16 @@
 import { Fragment, useRef,useState } from "react";
-
 import classes from "./profile-form.module.css";
-import Loadings from "../notificationOverlay/Loadings";
 import ResponseLoading from "../notificationOverlay/ResponseLoad";
-
+import ErrorComp from "../UI/ErrorComp";
+import PasswordChanged from "../UI/PasswordChanged";
 
 function ProfileForm() {
 
 const [passwordChange, setIsPasswordChange]= useState(false);
-
+const [isError, setIsError] = useState(false);
+  const [isErrorData, setIsErrorData] = useState(
+    "Sorry but the page you are looking for does not exist."
+  );
   const oldPasswordRef = useRef();
   const newPasswordRef = useRef();
 
@@ -23,13 +25,22 @@ const [passwordChange, setIsPasswordChange]= useState(false);
 
     const data = await response.json();
 
+    if (response.ok) {
+      setIsErrorData(data.message);
+      setIsPasswordChange(true);
+    }
+
+    if (!response.ok) {
+      setIsErrorData(data.message);
+      setIsError(true);
+    }
     console.log(data);
   }
 
   function submitHandler(event) {
     event.preventDefault();
 
-    setIsPasswordChange(true);
+    
     const enteredOldPassword = oldPasswordRef.current.value;
     const enteredNewPassword = newPasswordRef.current.value;
 
@@ -41,6 +52,13 @@ const [passwordChange, setIsPasswordChange]= useState(false);
     });
     event.target.reset();
     setIsPasswordChange(false);
+  }
+
+  if (passwordChange) {
+    return <PasswordChanged errorData={isErrorData} />;
+  }
+  if (isError) {
+    return <ErrorComp errorData={isErrorData} />;
   }
 
 
@@ -67,16 +85,3 @@ const [passwordChange, setIsPasswordChange]= useState(false);
 export default ProfileForm;
 
 
-{/* <form className={classes.form} onSubmit={submitHandler}>
-<div className={classes.control}>
-  <label htmlFor="new-password">New Password</label>
-  <input type="password" id="new-password" ref={newPasswordRef} />
-</div>
-<div className={classes.control}>
-  <label htmlFor="old-password">Old Password</label>
-  <input type="password" id="old-password" ref={oldPasswordRef} />
-</div>
-<div className={classes.action}>
-  <button>Change Password</button>
-</div>
-</form> */}

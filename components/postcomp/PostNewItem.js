@@ -1,7 +1,5 @@
-import classNamees from "./PostNewItem.module.css";
-//https://tailwindui.com/components/application-ui/overlays/notifications
+
 import React, { Fragment } from "react";
-import Button from "../UI/Button";
 import { useRef, useState } from "react";
 
 import ErrorComp from "../UI/ErrorComp";
@@ -263,113 +261,7 @@ Thank you
     <button type="submit" className="rounded-md bg-purple-950 px-12 py-3 text-xl font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Post</button>
   </div>
 </form>
-      {/* <div classNameName={classNamees.formstyle3}>
-        <form onSubmit={postSubmitHandler}>
-          <fieldset>
-            <legend>Data</legend>
-            <div classNameName={classNamees.divider}>
-              <select
-                name="item"
-                classNameName={classNamees.inputfield}
-                ref={typeInputRef}
-              >
-                <option value="Lost">Lost</option>
-              </select>
-              <select
-                defaultValue="Category"
-                name="category"
-                classNameName={classNamees.inputfield}
-                ref={categoryInputRef}
-                required
-              >
-                <option value="Category" disabled>
-                  Category
-                </option>
-                <option value="Wallet">Wallet</option>
-                <option value="ID Card / Student Card">
-                  ID Card / Student Card
-                </option>
-                <option value="Smart Phone / Laptop">
-                  Smart Phone / Laptop
-                </option>
-                <option value="Keys">Keys</option>
-                <option value="Others">Others</option>
-              </select>
-            </div>
-
-            <label htmlFor="field3">
-              <span>
-                Item Name <span classNameName={classNamees.required}>*</span>
-              </span>
-              <input
-                type="text"
-                name="field3"
-                placeholder="Title"
-                classNameName={classNamees.inputfield}
-                ref={titleInputRef}
-                required
-              ></input>
-            </label>
-            <label htmlFor="field4">
-              <span>
-                Enter question based on an item.
-                <span classNameName={classNamees.required}>*</span>
-              </span>
-              <input
-                type="text"
-                name="field4"
-                placeholder="Ex:- What is the color of the phone?"
-                classNameName={classNamees.inputfield}
-                ref={questionInputRef}
-                required
-              ></input>
-            </label>
-
-            <label htmlFor="date">
-              <span>
-                Select a Date: <span classNameName={classNamees.required}>*</span>
-              </span>
-              <input
-                type="date"
-                name="date"
-                id="date"
-                classNameName={classNamees.customselect}
-                ref={dateInputRef}
-                required
-              ></input>
-            </label>
-          </fieldset>
-          <fieldset>
-            <legend>Details</legend>
-            <label htmlFor="description">
-              <span>
-                Description <span classNameName={classNamees.required}>*</span>
-              </span>
-              <textarea
-                type="text"
-                name="description"
-                placeholder="Description about item (like location etc...)"
-                classNameName={classNamees.textareafield}
-                ref={descriptionInputRef}
-                required
-              ></textarea>
-            </label>
-            <input
-              type="file"
-              id="image"
-              name="image"
-              accept="image/*"
-              classNameName={classNamees.customselect}
-              style={{ width: "100%" }}
-              onChange={converttobase64}
-              required
-            />
-            <div classNameName={classNamees.center}>
-              <Button content="Post"></Button>
-            </div>
-          </fieldset>
-        </form>
-      </div> */}
+      
 
       {sendEmail && (
         <Noti data="Email Successfully Sent to LostNest Registered Users!" />

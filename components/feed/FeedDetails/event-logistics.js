@@ -3,7 +3,6 @@ import classes from "./event-logistics.module.css";
 import { Fragment } from "react";
 import Head from "next/head";
 import { TodayOutline, GridOutline, MenuOutline } from "react-ionicons";
-//https://react-ionicons.netlify.app/
 function EventLogistics(props) {
   const { Type, Category, Title, Date, ReducedImg } = props;
 

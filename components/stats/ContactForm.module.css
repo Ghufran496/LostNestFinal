@@ -26,9 +26,7 @@
   text-transform: capitalize;
 }
 
-/* .contactform{
-  background-color: #f4f4f4;
-} */
+
 .contactform > form > div {
   display: flex;
   flex-direction: column;

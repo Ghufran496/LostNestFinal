@@ -14,15 +14,4 @@ function AnswerList(props) {
 
 export default AnswerList;
 
-/*
 
-return (
-    <ul className={classes.response}>
-      {ansitems.map((item) => (
-        <li key={item._id}>
-          <p>{item.Answer}</p>
-          <div>By {item.PosterID}</div>
-        </li>
-      ))}
-    </ul>
-  );*/

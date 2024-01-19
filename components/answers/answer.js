@@ -78,37 +78,3 @@ function Answer(props) {
 
 export default Answer;
 
-// useEffect(() => {
-//   const fetchData = async () => {
-//     if (showResponse) {
-//       setLoadingContent(true);
-//       try {
-//         const response = await fetch("/api/answers/" + postid);
-//         const data = await response.json();
-//         setresponse(data.responses);
-//         if (data.responses) {
-//           setLoadingContent(false);
-//         }
-//       } catch (error) {
-//         console.error("Error fetching data:", error);
-//         // Handle errors as needed
-//         setLoadingContent(false);
-//       }
-//     }
-
-//     setLoadingContent(false);
-//   };
-
-//   fetchData();
-//   //setLoadingContent(false);
-// }, [showResponse, postid, setresponse, setLoadingContent]);
-
-// useEffect(() => {
-//   //setLoadingContent(true);
-//   if (showResponse) {
-//     fetch("/api/answers/" + postid)
-//       .then((response) => response.json())
-//       .then((data) => setresponse(data.responses));
-//   }
-//   setLoadingContent(false);
-// }, [showResponse, setLoadingContent]);

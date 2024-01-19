@@ -70,8 +70,5 @@ function AllItems() {
     </div>
   );
 }
-// {
-//   /* <PostGrid data={isData} />
-//       {isLoading && <Loading />} */
-// }
+
 export default AllItems;
