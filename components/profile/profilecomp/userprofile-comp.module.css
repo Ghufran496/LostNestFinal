@@ -32,11 +32,11 @@
     linear,
     left top,
     right bottom,
-    from(#3586ff),
-    to(#345b97)
+    from(#7a48d8),
+    to(#311465)
   );
   
-  background-image: linear-gradient(to right bottom, #3586ff, #345b97);
+  background-image: linear-gradient(to right bottom, #7a48d8, #311465);
   padding: 4rem 0;
 }
 
@@ -117,11 +117,11 @@
     linear,
     left top,
     right top,
-    from(#3586ff),
-    to(#345b97)
+    from(#7a48d8),
+    to(#311465)
   );
  
-  background-image: linear-gradient(to right, #3586ff, #345b97);
+  background-image: linear-gradient(to right, #7a48d8, #311465);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -204,7 +204,7 @@
   background-size: cover; */
   border-radius: 50%;
   margin-right: 2rem;
-  border: 1px solid #345b97;
+  border: 1px solid #311465;
 }
 
 .formupload {
@@ -279,7 +279,7 @@
 
 .btn:focus {
   outline: none;
-  background-color: #345b97;
+  background-color: #311465;
 }
 
 .btnwhite {
@@ -291,11 +291,11 @@
 }
 
 .btngreen {
-  background-color: #4282e2;
+  background-color: #7a48d8;
   color: #fff;
 }
 .btngreen::after {
-  background-color: #4282e2;
+  background-color: #7a48d8;
 }
 
 .btnsmall {
@@ -306,7 +306,7 @@
 .btnsmall,
 .btnsmall:link,
 .btnsmall:visited {
-  background-color: #4282e2;
+  background-color: #7a48d8;
   color: #fff;
   font-size: 1.4rem;
   padding: 1.25rem 3rem;
@@ -322,22 +322,22 @@
 }
 
 .btnsmall:hover {
-  background-color: #345b97;
+  background-color: #311465;
 }
 
 .btntext:link,
 .btntext:visited {
-  color: #4282e2;
+  color: #7a48d8;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 1px solid #4282e2;
+  border-bottom: 1px solid #7a48d8;
   padding: 3px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 .btntext:hover {
-  background-color: #4282e2;
+  background-color: #7a48d8;
   color: #fff;
   -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
@@ -354,7 +354,7 @@
 
 .btntext:focus {
   outline: none;
-  outline: 3px solid #4282e2;
+  outline: 3px solid #7a48d8;
   outline-offset: 3px;
 }
 
@@ -362,7 +362,7 @@
   margin: 6rem 0;
   width: 100%;
   height: 1px;
-  background-color: #4282e2;
+  background-color: #311465;
 }
 
 
