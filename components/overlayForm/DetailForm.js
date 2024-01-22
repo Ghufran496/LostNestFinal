@@ -71,7 +71,7 @@ const DetailForm = (props) => {
   return (
     <Fragment>
       <form className={classes.form} onSubmit={InfosubmitHandler}>
-        <label for="contactInformations">Enter Contact Informations</label>
+        <label htmlFor="contactInformations">Enter Contact Informations</label>
         <textarea
           type="text"
           name="contactInformations"

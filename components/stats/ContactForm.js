@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import Loading from "../UI/Loading";
 import Footer from "../Global/Footer";
 import ErrorComp from "../UI/ErrorComp";
+import ResponseLoading from "../notificationOverlay/ResponseLoad";
 
 function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +50,7 @@ function ContactForm() {
   }
 
   if (isLoading) {
-    return <Loading />;
+    return <ResponseLoading con="Sending" />;
   }
 
   if (isError) {

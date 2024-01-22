@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&family=Mulish&family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Lato:ital,wght@0,100;0,300;0,400;1,300&family=Mulish&family=Roboto&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

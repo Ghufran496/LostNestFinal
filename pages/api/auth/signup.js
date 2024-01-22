@@ -34,7 +34,7 @@ async function handler(req, res) {
   }
 
   const client = await connectToDatabase();
-
+if(client){
   const db = client.db();
 
   const existingUser = await db.collection("users").findOne({ email: email });
@@ -54,6 +54,11 @@ async function handler(req, res) {
   });
 
   res.status(201).json({ message: "Created user!" });
+}else{
+  console.error("Failed to connect to the database");
+}
+
+  
   
 }
 

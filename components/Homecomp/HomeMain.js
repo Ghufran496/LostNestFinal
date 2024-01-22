@@ -50,7 +50,7 @@ const HomeMain = () => {
               />
               <h4 className={classes.head}>Create an account</h4>
               <p className={classes.para}>
-                Initially, you have to create an account to get started.
+              To begin, you'll need to create an account.
               </p>
               <Link href="/auth" legacyBehavior>
                 <a>

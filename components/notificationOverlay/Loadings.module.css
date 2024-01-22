@@ -5,11 +5,11 @@
   bottom: 0;
   left: -70vw; /* Initial position off-screen to the left */
   width: 70vw;
-  max-width: 250px;
+  max-width: 260px;
   background: linear-gradient(135deg, #311465, #1c0f3e);
   display: flex;
   align-items: flex-end;
-  padding: 1.5rem;
+  padding: 1rem;
   border-top-right-radius: 15px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   animation: slideIn 0.5s forwards; /* Animation to slide in from left */

@@ -12,11 +12,6 @@
   ],
   "rootMainFiles": [],
   "pages": {
-    "/": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/index.js"
-    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -32,15 +27,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/auth.js"
     ],
-    "/profile": [
+    "/dashboard": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/profile.js"
+      "static/chunks/pages/dashboard.js"
     ],
-    "/stats": [
+    "/postfounditem": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/stats.js"
+      "static/chunks/pages/postfounditem.js"
     ]
   },
   "ampFirstPages": []
