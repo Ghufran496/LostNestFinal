@@ -28,7 +28,8 @@ const dashboard = () => {
           justifyContent: "center",
           alignItems: "center",
           padding: "1rem",
-          paddingTop:"3rem"
+          paddingTop:"3rem",
+          textAlign:"center"
         }}
       >
         <h1 style={{ fontSize: "3.2rem"}}>Welcome To LostNest</h1>

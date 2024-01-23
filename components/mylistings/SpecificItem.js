@@ -20,6 +20,8 @@ function Specificitem(props) {
   const detailLink = `/mylistings/${_id}`;
 
   return (
+
+
     <li className={classes.item}>
       <div className={classes.imgdiv}>
         <img

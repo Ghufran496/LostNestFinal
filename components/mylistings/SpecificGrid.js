@@ -9,15 +9,7 @@ const SpecificGrid = (props) => {
   }
 
   return (
-    <ul
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "1rem",
-      }}
-    >
+    <ul className="flex flex-col justify-center items-center p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12">
       {data.map((post) => (
         <Specificitem key={post._id} data={post} />
       ))}

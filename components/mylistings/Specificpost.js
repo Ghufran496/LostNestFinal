@@ -21,10 +21,7 @@ function Specificpost() {
       .then((response) => response.json())
       .then((data) => {
         if (isMounted) {
-         
-
           const dataArray = Array.isArray(data) ? data : [data];
-         
 
           setIsData(dataArray);
 
@@ -56,24 +53,18 @@ function Specificpost() {
   }
 
   return (
-    <div>
+    <div className="text-center mt-4 md:mt-6 lg:mt-8 xl:mt-10 2xl:mt-12">
       {isData.length === 0 && !isLoading ? (
-        <p
-          style={{
-            fontSize: "2rem",
-            display: "flex",
-            marginTop: "1rem",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          You have not Listed any Posts
+        <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl flex mt-4 md:mt-6 lg:mt-8 xl:mt-10 2xl:mt-12 justify-center items-center">
+          You have not listed any posts
         </p>
       ) : (
         <SpecificGrid data={isData} />
       )}
       {isLoading && <Loading />}
     </div>
+
+    
   );
 }
 

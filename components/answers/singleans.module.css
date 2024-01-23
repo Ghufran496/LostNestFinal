@@ -75,7 +75,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .list {
-    grid-gap: 6rem;
+    grid-gap: 1rem;
   }
   .linkpara {
     font-size: 1.75rem;

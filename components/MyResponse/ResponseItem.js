@@ -49,11 +49,10 @@ const ResponseItem = (props) => {
     setIsItemDelete(true);
     try {
       const result = await deletePostData(_id);
-      //   // Handle the result if needed
+
       window.location.reload();
       setIsItemDelete(false);
     } catch (error) {
-      // Handle the error, e.g., show an error message to the user
       console.error("Error deleting response:", error.message);
       setIsItemDelete(false);
     }
@@ -75,31 +74,12 @@ const ResponseItem = (props) => {
   }
 
   return (
-    <li
-      style={{
-        fontSize: "1.5rem",
-        border: "1px solid #311465",
-        padding: "2rem",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        fontWeight: "400",
-        borderRadius: "1rem",
-        position: "relative",
-        overflow: "hidden", // Hide overflow for a cleaner look
-      }}
-    >
-      <div
-        style={{
-          background: "#311465",
-          height: "100%",
-          width: "4px",
-          position: "absolute",
-          left: 0,
-          top: 0,
-        }}
-      ></div>
-      <div style={{ marginLeft: "4rem" }}>
+    <li className={classes.list}>
+      <div className={classes.maindiv}></div>
+      <div>
         <h3>
-          Item ID: <span className={classes.spaner}>{PostID}</span>
+          Item ID:
+          <span className={classes.spaner}>{PostID}</span>
         </h3>
         <h3>
           Item Name: <span className={classes.spaner}>{ItemTitle}</span>
@@ -121,28 +101,12 @@ const ResponseItem = (props) => {
           )}
         </div>
         {isDivVisible && (
-          <div
-            style={{
-              padding: "1rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "1rem",
-              background: "#f4f4f4",
-            }}
-          >
+          <div className={classes.responsemain}>
             <h4>
-              Response :{" "}
+              Response :
               <span style={{ color: "#311465" }}>{enteredContact}</span>
             </h4>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gridGap: "1rem",
-              }}
-            >
+            <div className={classes.btndiv}>
               <button className={classes.btn} onClick={handleButtonClick}>
                 Close
               </button>
@@ -158,3 +122,4 @@ const ResponseItem = (props) => {
 };
 
 export default ResponseItem;
+
