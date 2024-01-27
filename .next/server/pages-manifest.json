@@ -2,7 +2,11 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/postlostitem": "pages/postlostitem.js",
-  "/postfounditem": "pages/postfounditem.js",
-  "/profile": "pages/profile.js"
+  "/dashboard": "pages/dashboard.js",
+  "/responses": "pages/responses.js",
+  "/mylistings": "pages/mylistings.js",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/api/myposts/fetchmypost": "pages/api/myposts/fetchmypost.js",
+  "/api/post/postitem": "pages/api/post/postitem.js",
+  "/api/answers/sendResponse": "pages/api/answers/sendResponse.js"
 }

@@ -6,16 +6,22 @@ import { authOptions } from "../auth/[...nextauth]";
 async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
-   
-   const session = await getServerSession(req, res, authOptions);
+
+    const session = await getServerSession(req, res, authOptions);
     if (!session) {
       res.status(401).json({ message: "Not authenticated!" });
       return;
     }
-    
+
     const posterEmail = session.user.email;
     const { Type, Category, Title, Description, Question, Date, ReducedImg } =
       data;
+
+    if (!ReducedImg) {
+      return res
+        .status(400)
+        .json({ message: "Please upload an image to continue." });
+    }
 
     if (
       !Type ||
@@ -43,12 +49,12 @@ async function handler(req, res) {
       posterEmail: posterEmail,
     });
 
-    res.status(201).json({ message: "Item Posted!" });
-   
+    res.status(201).json({ message: "Item Posted Successfully!" });
   } else {
     try {
       const data = await getAllPosts();
       res.status(200).json(data);
+      
     } catch (error) {
       console.error("Error:", error);
       res.status(500).json({

@@ -1,20 +1,26 @@
 import { Fragment, useRef, useState } from "react";
 import classes from "./profile-form.module.css";
 import ResponseLoading from "../notificationOverlay/ResponseLoad";
-import ErrorComp from "../UI/ErrorComp";
-import PasswordChanged from "../UI/PasswordChanged";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProfileForm() {
   const [passwordChange, setIsPasswordChange] = useState(false);
   const [displayChange, setIsDisplayChange] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [isErrorData, setIsErrorData] = useState(
-    "Sorry but the page you are looking for does not exist."
-  );
+
+  const [passwordError, setPasswordError] = useState("");
   const oldPasswordRef = useRef();
   const newPasswordRef = useRef();
 
-  
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    if (newPassword.length < 7) {
+      setPasswordError("Password should be at least 7 characters long");
+    } else {
+      setPasswordError("");
+    }
+  };
+
   async function changePasswordHandler(passwordData) {
     try {
       const response = await fetch("/api/user/change-password", {
@@ -27,16 +33,13 @@ function ProfileForm() {
 
       const data = await response.json();
 
-      if (response.ok) {
-        setIsErrorData(data.message);
-        setIsPasswordChange(true);
+      if (!response.ok) {
+        toast.error(data.message, { theme: "colored" });
       } else {
-        setIsErrorData(data.message);
-        setIsError(true);
+        toast.success(data.message, { theme: "colored" });
       }
-      console.log(data);
-    } finally {
-      setIsPasswordChange(false); // Move this line here
+    } catch (err) {
+      toast.error("Error", { theme: "colored" });
     }
   }
 
@@ -52,21 +55,14 @@ function ProfileForm() {
       oldPassword: enteredOldPassword,
       newPassword: enteredNewPassword,
     });
-    event.target.reset();
-    setIsPasswordChange(false);
-    setIsDisplayChange(false);
-  }
 
- 
-  if (passwordChange) {
-    return <PasswordChanged errorData={isErrorData} />;
-  }
-  if (isError) {
-    return <ErrorComp errorData={isErrorData} />;
+    event.target.reset();
+    setIsDisplayChange(false);
   }
 
   return (
     <Fragment>
+      <ToastContainer autoClose={1500} draggable closeOnClick />
       <form
         className={`${classes.form} ${classes.formuserpassword}`}
         onSubmit={submitHandler}
@@ -94,9 +90,22 @@ function ProfileForm() {
             type="password"
             placeholder="••••••••"
             ref={newPasswordRef}
+            onChange={handlePasswordChange}
             required
           />
         </div>
+        {passwordError && (
+          <div
+            style={{
+              textAlign: "center",
+              color: "red",
+              marginBottom: "8px",
+              textDecoration: "underline",
+            }}
+          >
+            {passwordError}
+          </div>
+        )}
         <div className={`${classes.formgroup} ${classes.right}`}>
           <button
             className={`${classes.btn} ${classes.btnsmall} ${classes.btngreen} ${classes.btnsavepassword}`}

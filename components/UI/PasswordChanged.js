@@ -6,6 +6,9 @@ import Link from "next/link";
 import Button from "./Button";
 
 function PasswordChanged(props) {
+  const handleButtonClick = () => {
+    window.location.reload();
+  };
   return (
     <Fragment>
       <Head>
@@ -18,12 +21,12 @@ function PasswordChanged(props) {
           <h1 className={classes.heading1}>200</h1>
           <p className={classes.para1}>{props.errorData}</p>
           <p className={classes.para2}>
-            Success, password changed. You'll find lots to explore on the
-            home page.
+            Success, password changed. You'll find lots to explore on the home
+            page.
           </p>
           <Link href="/" legacyBehavior>
-            <a>
-              <Button content="Back to Homepage"></Button>
+            <a onClick={handleButtonClick}>
+              <Button content="Go Back"></Button>
             </a>
           </Link>
         </div>
@@ -33,5 +36,3 @@ function PasswordChanged(props) {
 }
 
 export default PasswordChanged;
-
-

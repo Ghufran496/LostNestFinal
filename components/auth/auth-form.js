@@ -4,21 +4,17 @@ import { useRouter } from "next/router";
 import Loading from "../UI/Loading";
 import Button from "../UI/Button";
 import classes from "./auth-form.module.css";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Fragment } from "react";
 import Footer from "../Global/Footer";
-import ErrorComp from "../UI/ErrorComp";
-
-
 
 
 function AuthForm() {
   const [toggleForms, setToggleForms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [isErrorData, setIsErrorData] = useState(
-    "Sorry but the page you are looking for does not exist."
-  );
+
+  const [passwordError, setPasswordError] = useState("");
 
   async function createUser(email, password, enteredName) {
     const response = await fetch("/api/auth/signup", {
@@ -32,9 +28,10 @@ function AuthForm() {
     const data = await response.json();
 
     if (!response.ok) {
-      setIsErrorData(data.message);
+      toast.error(data.message, { theme: "colored" });
       setIsLoading(false);
-      setIsError(true);
+    } else {
+      toast.success(data.message, { theme: "colored" });
     }
 
     return data;
@@ -75,16 +72,24 @@ function AuthForm() {
 
       if (!result.error) {
         router.replace("/dashboard");
+        toast.success("Success!", { theme: "colored" });
         setIsLoading(false);
       }
       if (result.error) {
+        toast.error(result.error, { theme: "colored" });
         setIsLoading(false);
-        setIsErrorData(result.error);
-        setIsError(true);
       }
     }
   }
 
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    if (newPassword.length < 7) {
+      setPasswordError("Password should be at least 7 characters long");
+    } else {
+      setPasswordError("");
+    }
+  };
   async function submitHandlerRegister(event) {
     setIsLoading(true);
     event.preventDefault();
@@ -97,16 +102,16 @@ function AuthForm() {
     const result = await createUser(enteredEmail, enteredPassword, enteredName);
     setIsLoading(false);
   }
+
   if (isLoading) {
     return <Loading />;
   }
 
-  if (isError) {
-    return <ErrorComp errorData={isErrorData} moveTo="AuthPage" />;
-  }
+
 
   return (
     <Fragment>
+      <ToastContainer autoClose={1500} draggable closeOnClick />
       <div className={classes.col1}>
         <div className={classes.formbox}>
           <div className={classes.form}>
@@ -165,9 +170,21 @@ function AuthForm() {
                   type="password"
                   placeholder="password"
                   ref={registerPasswordInputRef}
+                  onChange={handlePasswordChange}
                   required
                 />
-
+                {passwordError && (
+                  <div
+                    style={{
+                      textAlign: "center",
+                      color: "#f4f4f4",
+                      marginBottom: "5px",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    {passwordError}
+                  </div>
+                )}
                 <Button
                   content="REGISTER"
                   onClick={switchAuthModeHandler}
@@ -190,4 +207,3 @@ function AuthForm() {
 }
 
 export default AuthForm;
-

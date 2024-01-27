@@ -6,6 +6,9 @@ import Link from "next/link";
 import Button from "./Button";
 
 function ErrorComp(props) {
+  const handleButtonClick = () => {
+    window.location.reload();
+  };
   return (
     <Fragment>
       <Head>
@@ -22,8 +25,8 @@ function ErrorComp(props) {
             home page.
           </p>
           <Link href="/" legacyBehavior>
-            <a>
-              <Button content="Back to Homepage"></Button>
+            <a onClick={handleButtonClick}>
+              <Button content="Go Back"></Button>
             </a>
           </Link>
         </div>
@@ -33,5 +36,3 @@ function ErrorComp(props) {
 }
 
 export default ErrorComp;
-
-

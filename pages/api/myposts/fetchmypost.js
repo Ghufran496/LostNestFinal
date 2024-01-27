@@ -15,7 +15,7 @@ async function handler(req, res) {
     }
     const userEmail = session.user.email;
     try {
-      //const data = await getPostsByEmail(userEmail);
+   
       const client = await connectToDatabase();
 
       const usersCollection = client.db().collection("PostedItem");
@@ -39,4 +39,3 @@ async function handler(req, res) {
 }
 
 export default handler;
-

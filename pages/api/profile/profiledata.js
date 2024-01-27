@@ -1,4 +1,3 @@
-//import { getSession } from "next-auth/react";
 import { getServerSession } from "next-auth/next"
 import { authOptions } from "../auth/[...nextauth]";
 import { connectToDatabase } from "../../../lib/db";
@@ -10,7 +9,7 @@ async function handler(req, res) {
   const client = await connectToDatabase();
 
   try {
-    //const session = await getSession({ req });
+ 
     const session = await getServerSession(req, res, authOptions);
     if (!session) {
       return res.status(401).json({ message: "Not authenticated!" });
@@ -32,7 +31,7 @@ async function handler(req, res) {
 
     return res.status(200).json(user);
   } catch (error) {
-    console.error("Error handling profile data:", error);
+
     return res.status(500).json({ message: "Internal Server Error" });
   }
 }

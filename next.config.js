@@ -31,9 +31,6 @@
 //   };
 // };
 
-
-
-
 //LostNest Main gcch
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 
@@ -50,7 +47,9 @@ module.exports = (phase) => {
         smtp_pass: "1e9e125d684fac",
         NEXTAUTH_SECRET: "LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx5mLg=",
         NEXTAUTH_URL: "http://localhost:3000",
-
+        password_changehost: "live.smtp.mailtrap.io",
+        password_changeusername: "api",
+        password_changepass: "7f3c430972c0df09d5c35c46e1fbb767",
       },
     };
   }
@@ -58,20 +57,19 @@ module.exports = (phase) => {
   return {
     env: {
       mongodb_username: "gcch1122",
-        mongodb_password: "1ABSGfxlpesfCbyV",
-        mongodb_clustername: "LostNest",
-        mongodb_database: "DeployedLostNest",
+      mongodb_password: "1ABSGfxlpesfCbyV",
+      mongodb_clustername: "LostNest",
+      mongodb_database: "DeployedLostNest",
       smtp_host: "sandbox.smtp.mailtrap.io",
       smtp_user: "6bb4922c65d9b2",
       smtp_pass: "1e9e125d684fac",
       NEXTAUTH_SECRET: "LlKq6ZtYbr+hTC073mAmAh9/h2HwMfsFo4hrfCx5mLg=",
-
+      password_changehost: "live.smtp.mailtrap.io",
+      password_changeusername: "api",
+      password_changepass: "7f3c430972c0df09d5c35c46e1fbb767",
     },
   };
 };
-
-
-
 
 //Main Acc
 // const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");

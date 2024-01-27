@@ -2,17 +2,13 @@ import React, { Fragment } from "react";
 import classes from "./ContactForm.module.css";
 import Button from "../UI/Button";
 import { useRef, useState } from "react";
-import Loading from "../UI/Loading";
 import Footer from "../Global/Footer";
-import ErrorComp from "../UI/ErrorComp";
 import ResponseLoading from "../notificationOverlay/ResponseLoad";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ContactForm() {
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const [isErrorData, setIsErrorData] = useState(
-    "Sorry but the page you are looking for does not exist."
-  );
   const contactEmailInputRef = useRef();
   const contactMessageInputRef = useRef();
   const contactNameInputRef = useRef();
@@ -29,9 +25,12 @@ function ContactForm() {
     const data = await response.json();
 
     if (!response.ok) {
-      setIsErrorData(data.message);
+      toast.error(data.message, { theme: "colored" });
+
       setIsLoading(false);
-      setIsError(true);
+     
+    } else {
+      toast.success("message submitted!", { theme: "colored" });
     }
 
     return data;
@@ -46,19 +45,19 @@ function ContactForm() {
     const enteredName = contactNameInputRef.current.value;
 
     const result = await sendMessage(enteredEmail, enteredMessage, enteredName);
+    event.target.reset(); 
     setIsLoading(false);
+
   }
 
   if (isLoading) {
     return <ResponseLoading con="Sending" />;
   }
 
-  if (isError) {
-    return <ErrorComp errorData={isErrorData} />;
-  }
 
   return (
     <Fragment>
+      <ToastContainer autoClose={1500} draggable closeOnClick />
       <section className={classes.totalcontactform}>
         <div className={classes.contacttitle}>
           <h6 className={classes.sectionheading}>Contact Form</h6>

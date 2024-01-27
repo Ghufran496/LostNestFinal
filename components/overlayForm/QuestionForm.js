@@ -1,16 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import classes from "./QuestionForm.module.css";
 import Form from "./Form";
 
 function QuestionForm(props) {
   return ReactDOM.createPortal(
+    <Form oncancle={props.onclose} data2={props.data} />,
 
-  
-        <Form oncancle={props.onclose} data2={props.data} />
-     
-    
-      ,
     document.getElementById("Questions")
   );
 }

@@ -30,6 +30,7 @@
     "react-icons": "^4.12.0",
     "react-ionicons": "^4.2.1",
     "react-tailwindcss-datepicker": "^1.6.6",
+    "react-toastify": "^10.0.4",
     "recharts": "^2.10.1",
     "safer-buffer": "^2.1.2",
     "saslprep": "^1.0.3",

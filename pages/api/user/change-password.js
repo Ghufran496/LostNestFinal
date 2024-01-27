@@ -38,8 +38,16 @@ async function handler(req, res) {
   const passwordsAreEqual = await verifyPassword(oldPassword, currentPassword);
 
   if (!passwordsAreEqual) {
-    res.status(403).json({ message: "Invalid password." });
-   // client.close();
+    res.status(403).json({ message: "Your current password incorrect" });
+
+    return;
+  }
+
+  if (!newPassword || newPassword.trim().length < 7) {
+    res.status(422).json({
+      message:
+        "Invalid - new password should be at least 7 characters.",
+    });
     return;
   }
 

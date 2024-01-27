@@ -1,18 +1,12 @@
 import React, { Fragment } from "react";
 import { useRef, useState } from "react";
-
-import ErrorComp from "../UI/ErrorComp";
-import Noti from "../../components/notificationOverlay/noti";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Loadings from "../notificationOverlay/Loadings";
 
 function PostNewItem() {
   const [isLoading, setIsLoading] = useState(false);
   const [isImage, setIsImage] = useState("");
-  const [isError, setIsError] = useState(false);
-  const [isErrorData, setIsErrorData] = useState(
-    "Sorry but the page you are looking for does not exist."
-  );
-  const [sendEmail, setIsSendEmail] = useState(false);
   const [fileError, setFileError] = useState("");
 
   const typeInputRef = useRef();
@@ -34,16 +28,14 @@ function PostNewItem() {
       },
     });
 
-    if (!response.ok) {
-      // Handle non-2xx HTTP response status
-      console.error(`Error sending email. Status: ${response.status}`);
-    }
-
     const data = await response.json();
 
+    if (!response.ok) {
+      setIsLoading(false);
+      toast.error("Error in sending email to registered users.", { theme: "colored" });
+    }
     if (data.success) {
-      setIsSendEmail(true);
-      //console.log("success");
+      toast.success(data.message, { theme: "colored" });
     }
 
     return data;
@@ -73,13 +65,15 @@ function PostNewItem() {
         "Content-Type": "application/json",
       },
     });
-    setIsSendEmail(false);
 
     const data = await response.json();
+
     if (!response.ok) {
-      setIsErrorData(data.message);
       setIsLoading(false);
-      setIsError(true);
+
+      toast.error(data.message, { theme: "colored" });
+    } else {
+      toast.success(data.message, { theme: "colored" });
     }
 
     return data;
@@ -628,7 +622,6 @@ function PostNewItem() {
 
     const subject = `LostNest Alert: ${enteredType} - ${enteredTitle}`;
 
-    const emailres = await sendEmails(subject, message);
 
     const result = await sendPostData(
       enteredType,
@@ -640,19 +633,21 @@ function PostNewItem() {
       isImage
     );
 
-    event.target.reset(); // This resets the form
-    setIsImage(""); // Clear the image state
-    setIsLoading(false);
-    setIsSendEmail(false);
-  };
+    if (result.message === "Item Posted Successfully!") {
+      const emailres = await sendEmails(subject, message);
+    }
 
-  if (isError) {
-    return <ErrorComp errorData={isErrorData} />;
-  }
+    if (result.message === "Item Posted Successfully!") {
+      event.target.reset();
+      setIsImage(""); // Clear the image state
+    }
+    setIsLoading(false);
+  };
 
   return (
     <Fragment>
-      <form onSubmit={postSubmitHandler}>
+      <ToastContainer autoClose={1500} draggable closeOnClick />
+      <form style={{ margin: "0px 5px 0px 5px" }} onSubmit={postSubmitHandler}>
         <div className="space-y-12">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-xl font-semibold leading-7 text-gray-900 text-3xl">
@@ -870,10 +865,6 @@ function PostNewItem() {
           </button>
         </div>
       </form>
-
-      {sendEmail && (
-        <Noti data="Email Successfully Sent to LostNest Registered Users!" />
-      )}
       {isLoading && <Loadings />}
     </Fragment>
   );

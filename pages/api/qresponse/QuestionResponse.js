@@ -34,7 +34,7 @@ async function handler(req, res) {
       SubmittedDateTime: combinedDateTime,
     });
 
-    res.status(201).json({ message: "Answer Submitted" });
+    res.status(201).json({ message: "Response Submitted!" });
   } else {
     return;
   }

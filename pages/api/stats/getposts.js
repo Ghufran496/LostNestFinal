@@ -22,7 +22,6 @@ async function handler(req, res) {
         foundPosts: foundPostsCount,
       });
     } catch (error) {
-      console.error("Error:", error);
       res.status(500).json({
         message:
           "Internal Server Error: Unable to fetch and Display Specific Posts",

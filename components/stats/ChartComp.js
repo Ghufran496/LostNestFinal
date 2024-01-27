@@ -1,9 +1,11 @@
 import React from "react";
 import classes from "./ChartComp.module.css";
-
 import { Fragment, useEffect, useState } from "react";
 import Noti from "../notificationOverlay/noti";
 import Example from "../../components/stats/chart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const ChartComp = () => {
   const [count, setCount] = useState({});
 
@@ -14,11 +16,14 @@ const ChartComp = () => {
         setCount(data);
       })
       .catch((error) => {
-        console.error("Fetch error:", error);
+        toast.error(error.message, { theme: "colored" });
       });
   }, []);
+
+
   return (
     <Fragment>
+      <ToastContainer closeOnClick />
       <div className={classes.main}>
         <Example postscount={count} />
         <ul className={classes.ulist}>
