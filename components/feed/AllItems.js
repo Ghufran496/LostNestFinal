@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import PostGrid from "./PostGrid";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+//https://tutorend.com/tutorials/react-toastify-in-next-js-react-js
 import Loading from "../UI/Loading";
 function AllItems() {
   const [isData, setIsData] = useState("");

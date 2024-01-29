@@ -588,12 +588,12 @@ function PostNewItem() {
                 >
                   Powered by
                   <a
-                    href="http://htmlemail.io"
+                    href="https://www.lostnest.xyz/"
                     style="
-                      color: #9a9ea6;
+                      color: #311465;
                       font-size: 16px;
                       text-align: center;
-                      text-decoration: none;
+                      text-decoration: underline;
                     "
                     >LostNest</a
                   >

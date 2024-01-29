@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Fragment } from "react";
 import Footer from "../Global/Footer";
-
+import Link from "next/link";
 
 function AuthForm() {
   const [toggleForms, setToggleForms] = useState(false);
@@ -107,8 +107,6 @@ function AuthForm() {
     return <Loading />;
   }
 
-
-
   return (
     <Fragment>
       <ToastContainer autoClose={1500} draggable closeOnClick />
@@ -132,7 +130,11 @@ function AuthForm() {
                   ref={loginPasswordInputRef}
                   required
                 />
-
+                <div class="text-right pb-4">
+                  <Link href="/forget-password" class="text-white text-lg hover:text-gray-300">
+                    Forgot password ?
+                  </Link>
+                </div>
                 <Button
                   content="LOGIN"
                   onClick={switchAuthModeHandler}

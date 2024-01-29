@@ -1,3 +1,4 @@
 .next/cache/webpack/server-production/0.pack filter=lfs diff=lfs merge=lfs -text
 .next/cache/webpack/client-production/0.pack filter=lfs diff=lfs merge=lfs -text
 .next/cache/webpack/server-development/14.pack.gz filter=lfs diff=lfs merge=lfs -text
+.next/cache/webpack/server-development/9.pack.gz filter=lfs diff=lfs merge=lfs -text
